@@ -5,6 +5,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Timer;
 
 public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
 
@@ -93,6 +94,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     int NUMBER_OF_MINES_FOR_COUNTER = 10;
     int NUMBER_OF_FLAGS = 0;
     int NUMBER_FOR_COUNTER = 0;
+    int SECONDS_COUNTER = 0;
     private int [][] mines = new int[8][8];
 
     public MinesweeperBeginnerFrame(){
@@ -109,6 +111,14 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         countFlagsForMines();
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                SECONDS_COUNTER++;
+                setTimer();
+            }
+        }, 1000, 1000);
     }
 
     /**
@@ -203,7 +213,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                     buttons[i][j] = new JButton(Zeros);
                 }
              /*
-              Upper fill
+              Timer counter
              */
                 else if(i == 1 && (j == 6 || j == 7 || j == 8)){
                     buttons[i][j] = new JButton(Zeros);
@@ -510,6 +520,28 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                 buttons[i][j].setDisabledIcon(buttons[i][j].getIcon());
             }
         }
+    }
+
+    public void setTimer(){
+        int forCounter = SECONDS_COUNTER;
+        int hundreds = 0;
+        int tens = 0;
+        int ones = forCounter;
+        if(forCounter > 100){
+            hundreds = forCounter/100;
+            int rest = NUMBER_FOR_COUNTER - hundreds* 100;
+            tens = rest/10;
+            rest = rest - tens*10;
+            ones = rest;
+        }
+        if(forCounter >= 10){
+            tens = forCounter/10;
+            ones = NUMBER_FOR_COUNTER - tens*10;
+        }
+        //i == 1 && (j == 6 || j == 7 || j == 8
+        buttons[1][6].setIcon(checkNumber(hundreds));
+        buttons[1][7].setIcon(checkNumber(tens));
+        buttons[1][8].setIcon(checkNumber(ones));
     }
 
     @Override
