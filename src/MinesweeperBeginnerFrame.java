@@ -96,6 +96,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     int NUMBER_FOR_COUNTER = 0;
     int SECONDS_COUNTER = 0;
     private int [][] mines = new int[8][8];
+    boolean GAME_STATUS = true;
 
     public MinesweeperBeginnerFrame(){
         super("Minesweeper");
@@ -257,9 +258,9 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                                 if(temp.getIcon() == Untouched) {
                                     if (temp.getIcon() != Flag)
                                         temp.setIcon(Flag);
+                                    else temp.setIcon(Untouched);
+
                                 }
-                                else
-                                    temp.setIcon(Untouched);
                                 }
                             countFlagsForMines();
                             }
@@ -523,25 +524,28 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     }
 
     public void setTimer(){
-        int forCounter = SECONDS_COUNTER;
-        int hundreds = 0;
-        int tens = 0;
-        int ones = forCounter;
-        if(forCounter > 100){
-            hundreds = forCounter/100;
-            int rest = NUMBER_FOR_COUNTER - hundreds* 100;
-            tens = rest/10;
-            rest = rest - tens*10;
-            ones = rest;
+        if(GAME_STATUS) {
+            int forCounter = SECONDS_COUNTER;
+            int temp = SECONDS_COUNTER;
+            int hundreds = 0;
+            int tens = 0;
+            int ones = forCounter;
+            if (forCounter > 100) {
+                hundreds = forCounter / 100;
+                int rest = temp - hundreds * 100;
+                tens = rest / 10;
+                rest = rest - tens * 10;
+                ones = rest;
+            }
+            if (forCounter >= 10) {
+                tens = forCounter / 10;
+                ones = temp - tens * 10;
+            }
+            //i == 1 && (j == 6 || j == 7 || j == 8
+            buttons[1][6].setIcon(checkNumber(hundreds));
+            buttons[1][7].setIcon(checkNumber(tens));
+            buttons[1][8].setIcon(checkNumber(ones));
         }
-        if(forCounter >= 10){
-            tens = forCounter/10;
-            ones = NUMBER_FOR_COUNTER - tens*10;
-        }
-        //i == 1 && (j == 6 || j == 7 || j == 8
-        buttons[1][6].setIcon(checkNumber(hundreds));
-        buttons[1][7].setIcon(checkNumber(tens));
-        buttons[1][8].setIcon(checkNumber(ones));
     }
 
     @Override
@@ -556,6 +560,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                 if(source == buttons[i][j]) {
                     if (buttons[i][j].getIcon() != Flag) {
                         if (mines[i - 3][j - 1] == -1) {
+                            GAME_STATUS = false;
                             showAllMines();
                             buttons[i][j].setIcon(MineClicked);
                             disableAllButtons();
@@ -607,6 +612,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                         countFlagsForMines();
                     }
                     if(checkIfGameWon()){
+                        GAME_STATUS = false;
                         paintFace(Bro1, Bro2, Bro3, Bro4);
                         addAllFlags();
                         disableAllButtons();
