@@ -14,49 +14,50 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     /**
      * Corners
      */
-    private Icon TopRightCorner = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Border\\RightUpCorner.png");
-    private Icon TopLeftCorner = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Border\\LeftUpCorner.png");
-    private Icon DownRightCorner = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Border\\RightDownCorner.png");
-    private Icon DownLeftCorner = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Border\\LeftDownCorner.png");
+    private Icon TopRightCorner = new ImageIcon("src\\pics\\Border\\RightUpCorner.png");
+    private Icon TopLeftCorner = new ImageIcon("src\\pics\\Border\\LeftUpCorner.png");
+    private Icon DownRightCorner = new ImageIcon("src\\pics\\Border\\RightDownCorner.png");
+    private Icon DownLeftCorner = new ImageIcon("src\\pics\\Border\\LeftDownCorner.png");
     /**
      * Borders
      */
-    private Icon DownBorder = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Border\\DownBorder.png");
-    private Icon TopBorder = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Border\\UpBorder.png");
-    private Icon LeftBorder = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Border\\LeftBorder.png");
-    private Icon RightBorder = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Border\\RightBorder.png");
+    private Icon DownBorder = new ImageIcon("src\\pics\\Border\\DownBorder.png");
+    private Icon TopBorder = new ImageIcon("src\\pics\\Border\\UpBorder.png");
+    private Icon LeftBorder = new ImageIcon("src\\pics\\Border\\LeftBorder.png");
+    private Icon RightBorder = new ImageIcon("src\\pics\\Border\\RightBorder.png");
     /**
      * FIll
      */
-    private Icon Fill = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Border\\Blank.png");
-    private Icon FillWithBorder = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Border\\BlankWithBorder.png");
-    private Icon Logo = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Border\\Logo.png");
+    private Icon Fill = new ImageIcon("src\\pics\\Border\\Blank.png");
+    private Icon FillWithBorder = new ImageIcon("src\\pics\\Border\\BlankWithBorder.png");
+    private Icon Logo = new ImageIcon("src\\pics\\Border\\Logo.png");
 
     /**
      * Timer/Mines
      */
-    private Icon Zeros = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Timer\\TimerZero.png");
+    private Icon Zeros = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
     /**
      * Faces
      */
-    private Icon Smile = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Faces\\SmileFace.png");
-    private Icon Dead = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Faces\\DeadFace.png");
+    private Icon Smile = new ImageIcon("src\\pics\\Faces\\SmileFace.png");
+    private Icon Dead = new ImageIcon("src\\pics\\Faces\\DeadFace.png");
+    private Icon Bro = new ImageIcon("src\\pics\\Faces\\BroFace.png");
     /**
      * Game
      */
-    private Icon Untouched = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Game\\BlankBlock.png");
-    private Icon Touched = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Game\\clickedBlock.png");
-    private Icon OneB = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Game\\One.png");
-    private Icon TwoB = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Game\\Two.png");
-    private Icon ThreeB = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Game\\Three.png");
-    private Icon FourB = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Game\\Four.png");
-    private Icon FiveB = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Game\\Five.png");
-    private Icon SixB = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Game\\Six.png");
-    private Icon SevenB = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Game\\Seven.png");
-    private Icon EightB = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Game\\Eight.png");
-    private Icon MineClicked = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Game\\bombClicked.png");
-    private Icon NotClicked = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Game\\BombNotClicked.png");
-    private Icon Flag = new ImageIcon("D:\\Projekty\\JTp\\MinesweeperP\\src\\pics\\Game\\flag.png");
+    private Icon Untouched = new ImageIcon("src\\pics\\Game\\BlankBlock.png");
+    private Icon Touched = new ImageIcon("src\\pics\\Game\\clickedBlock.png");
+    private Icon OneB = new ImageIcon("src\\pics\\Game\\One.png");
+    private Icon TwoB = new ImageIcon("src\\pics\\Game\\Two.png");
+    private Icon ThreeB = new ImageIcon("src\\pics\\Game\\Three.png");
+    private Icon FourB = new ImageIcon("src\\pics\\Game\\Four.png");
+    private Icon FiveB = new ImageIcon("src\\pics\\Game\\Five.png");
+    private Icon SixB = new ImageIcon("src\\pics\\Game\\Six.png");
+    private Icon SevenB = new ImageIcon("src\\pics\\Game\\Seven.png");
+    private Icon EightB = new ImageIcon("src\\pics\\Game\\Eight.png");
+    private Icon MineClicked = new ImageIcon("src\\pics\\Game\\bombClicked.png");
+    private Icon NotClicked = new ImageIcon("src\\pics\\Game\\BombNotClicked.png");
+    private Icon Flag = new ImageIcon("src\\pics\\Game\\flag.png");
 
     /**
      * Mines - -1
@@ -183,6 +184,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
              */
                 else if(i == 1 && j == 4){
                     buttons[i][j] = new JButton(Smile);
+                    buttons[i][j].addActionListener(this);
                 }
              /*
               Upper fill
@@ -364,14 +366,24 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     public boolean checkIfGameWon(){
         for(int i = 3; i < 11; i++) {
             for (int j = 1; j < 9; j++) {
-                if(mines[i-3][j-1] == -1){
-                    if(buttons[i][j].getIcon() != Untouched || buttons[i][j].getIcon() != Flag){
+                if(mines[i-3][j-1] != -1){
+                    if(buttons[i][j].getIcon() == Untouched){
                         return false;
                     }
                 }
             }
         }
         return true;
+    }
+
+    public void addAllFlags(){
+        for(int i = 3; i < 11; i++) {
+            for (int j = 1; j < 9; j++) {
+                if(mines[i-3][j-1] == -1 && buttons[i][j].getIcon() != Flag){
+                    buttons[i][j].setIcon(Flag);
+                }
+            }
+        }
     }
 
     public void showAllMines(){
@@ -384,9 +396,22 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         }
     }
 
+    public void disableAllButtons(){
+        for(int i = 3; i < 11; i++){
+            for(int j = 1; j < 9; j++) {
+                buttons[i][j].setEnabled(false);
+                buttons[i][j].setDisabledIcon(buttons[i][j].getIcon());
+            }
+        }
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
+        if(source == buttons[1][4]){
+            dispose();
+            new MinesweeperBeginnerFrame();
+        }
         for(int i = 3; i < 11; i++){
             for(int j = 1; j < 9; j++){
                 if(source == buttons[i][j]) {
@@ -394,6 +419,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                         if (mines[i - 3][j - 1] == -1) {
                             showAllMines();
                             buttons[i][j].setIcon(MineClicked);
+                            disableAllButtons();
                             buttons[1][4].setIcon(Dead);
                         } else if (mines[i - 3][j - 1] == 0) {
                             Set<Point> set = new HashSet<>();
@@ -440,8 +466,14 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                             buttons[i][j].setIcon(EightB);
                         }
                     }
+                    if(checkIfGameWon()){
+                        buttons[1][4].setIcon(Bro);
+                        addAllFlags();
+                        disableAllButtons();
+                    }
                 }
             }
         }
+
     }
 }
