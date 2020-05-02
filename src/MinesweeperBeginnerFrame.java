@@ -41,7 +41,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     private Icon Fives = new ImageIcon("src\\pics\\Timer\\TimerFive.png");
     private Icon Sixs = new ImageIcon("src\\pics\\Timer\\TimerSix.png");
     private Icon Sevens = new ImageIcon("src\\pics\\Timer\\TimerSeven.png");
-    private Icon Ejghts = new ImageIcon("src\\pics\\Timer\\TimerEight.png");
+    private Icon Eights = new ImageIcon("src\\pics\\Timer\\TimerEight.png");
     private Icon Nines = new ImageIcon("src\\pics\\Timer\\TimerNine.png");
     private Icon minuss = new ImageIcon("src\\pics\\Timer\\Timer-.png");
      /**
@@ -108,6 +108,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         setVisible(true);
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
+        countFlagsForMines();
     }
 
     /**
@@ -432,10 +433,57 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                 if(buttons[i][j].getIcon() == Flag){
                     NUMBER_OF_FLAGS++;
                 }
-            }
+            };
         }
         NUMBER_FOR_COUNTER = NUMBER_OF_MINES_FOR_COUNTER - NUMBER_OF_FLAGS;
-        System.out.println(NUMBER_FOR_COUNTER);
+        int forCounter = NUMBER_FOR_COUNTER;
+        int hundreds = 0;
+        int tens = 0;
+        int ones = forCounter;
+        if(forCounter > 100){
+            hundreds = forCounter/100;
+            int rest = NUMBER_FOR_COUNTER - hundreds* 100;
+            tens = rest/10;
+            rest = rest - tens*10;
+            ones = rest;
+        }
+        if(forCounter >= 10){
+            tens = forCounter/10;
+            ones = NUMBER_FOR_COUNTER - tens*10;
+        }
+        changeCounter(hundreds, tens, ones);
+    }
+
+    public Icon checkNumber(int number){
+        if(number == 0){
+            return Zeros;
+        }if(number == 1){
+            return Ones;
+        }if(number == 2){
+            return Twos;
+        }if(number == 3){
+            return Threes;
+        }if(number == 4){
+            return Fours;
+        }if(number == 5){
+            return Fives;
+        }if(number == 6){
+            return Sixs;
+        }if(number == 7){
+            return Sevens;
+        }if(number == 8){
+            return Eights;
+        }if(number == 9){
+            return Nines;
+        }
+        return Zeros;
+    }
+
+    public void changeCounter(int hundreds, int tens, int ones){
+        //i == 1 && (j == 1 || j == 2 || j == 3)
+        buttons[1][1].setIcon(checkNumber(hundreds));
+        buttons[1][2].setIcon(checkNumber(tens));
+        buttons[1][3].setIcon(checkNumber(ones));
     }
 
     public void paintFace(Icon F1, Icon F2,Icon F3,Icon F4){
