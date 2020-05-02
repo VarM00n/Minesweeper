@@ -36,11 +36,41 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
      * Timer/Mines
      */
     private Icon Zeros = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
-    /**
+    private Icon Ones = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
+    private Icon Twos = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
+    private Icon Threes = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
+    private Icon Fours = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
+    private Icon Sixs = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
+    private Icon Sevens = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
+    private Icon Ejghts = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
+    private Icon Nines = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
+    private Icon minuss = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
+     /**
      * Faces
      */
-    private Icon Smile = new ImageIcon("src\\pics\\Faces\\SmileFace.png");
-    private Icon Dead = new ImageIcon("src\\pics\\Faces\\DeadFace.png");
+        /**
+         * Smile
+         */
+            private Icon Smile1 = new ImageIcon("src\\pics\\Faces\\Smile\\S1.png");
+            private Icon Smile2 = new ImageIcon("src\\pics\\Faces\\Smile\\S2.png");
+            private Icon Smile3 = new ImageIcon("src\\pics\\Faces\\Smile\\S3.png");
+            private Icon Smile4 = new ImageIcon("src\\pics\\Faces\\Smile\\S4.png");
+        /**
+         * Dead
+         */
+            private Icon Dead1 = new ImageIcon("src\\pics\\Faces\\Dead\\D1.png");
+            private Icon Dead2 = new ImageIcon("src\\pics\\Faces\\Dead\\D2.png");
+            private Icon Dead3 = new ImageIcon("src\\pics\\Faces\\Dead\\D3.png");
+            private Icon Dead4 = new ImageIcon("src\\pics\\Faces\\Dead\\D4.png");
+        /**
+        * Bro
+        */
+            private Icon Bro1 = new ImageIcon("src\\pics\\Faces\\Bro\\B1.png");
+            private Icon Bro2 = new ImageIcon("src\\pics\\Faces\\Bro\\B2.png");
+            private Icon Bro3 = new ImageIcon("src\\pics\\Faces\\Bro\\B3.png");
+            private Icon Bro4 = new ImageIcon("src\\pics\\Faces\\Bro\\B4.png");
+
+
     private Icon Bro = new ImageIcon("src\\pics\\Faces\\BroFace.png");
     /**
      * Game
@@ -79,7 +109,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         generateMines();
         countNeighbourMines();
         setVisible(true);
-
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
     }
 
     /**
@@ -170,7 +201,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
              /*
               Mines counter
              */
-                else if(i == 1 && (j == 1 || j == 2)){
+                else if(i == 1 && (j == 1 || j == 2 || j == 3)){
                     buttons[i][j] = new JButton(Zeros);
                 }
              /*
@@ -182,17 +213,26 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
              /*
               Face
              */
-                else if(i == 1 && j == 4){
-                    buttons[i][j] = new JButton(Smile);
+                else if((i == 1 && j == 4)){
+                    buttons[i][j] = new JButton(Smile1);
+                    buttons[i][j].addActionListener(this);
+                }
+                else if(i == 1){
+                    buttons[i][j] = new JButton(Smile2);
+                    buttons[i][j].addActionListener(this);
+                }
+                else if(i == 2 && j == 4){
+                    buttons[i][j] = new JButton(Smile4);
+                    buttons[i][j].addActionListener(this);
+                }
+                else if(i == 2 && j == 5){
+                    buttons[i][j] = new JButton(Smile3);
                     buttons[i][j].addActionListener(this);
                 }
              /*
               Upper fill
              */
-                else if(i == 1){
-                    buttons[i][j] = new JButton(Fill);
-                }
-                else if(i == 2 && j == 8){
+                else if((i == 2 && j == 8) ){
                     buttons[i][j] = new JButton(Logo);
                 }
                 else if(i == 2){
@@ -206,12 +246,15 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                         @Override
                         public void mouseClicked(MouseEvent e) {
                             if (e.getButton() == MouseEvent.BUTTON3) {
-                                if(temp.getIcon() != Flag)
-                                    temp.setIcon(Flag);
+                                if(temp.getIcon() == Untouched) {
+                                    if (temp.getIcon() != Flag)
+                                        temp.setIcon(Flag);
+                                }
                                 else
                                     temp.setIcon(Untouched);
+                                }
                             }
-                        }
+
                     });
                 }
                 buttons[i][j].setBorder(new EmptyBorder(0, 0, 0, 0));
@@ -386,6 +429,13 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         }
     }
 
+    public void paintFace(Icon F1, Icon F2,Icon F3,Icon F4){
+        buttons[1][4].setIcon(F1);
+        buttons[1][5].setIcon(F2);
+        buttons[2][4].setIcon(F4);
+        buttons[2][5].setIcon(F3);
+    }
+
     public void showAllMines(){
         for(int i = 3; i < 11; i++) {
             for (int j = 1; j < 9; j++) {
@@ -408,7 +458,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-        if(source == buttons[1][4]){
+        if(source == buttons[1][4] || source == buttons[1][5]|| source == buttons[2][4] || source == buttons[2][5]){
             dispose();
             new MinesweeperBeginnerFrame();
         }
@@ -420,7 +470,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                             showAllMines();
                             buttons[i][j].setIcon(MineClicked);
                             disableAllButtons();
-                            buttons[1][4].setIcon(Dead);
+                            paintFace(Dead1, Dead2, Dead3, Dead4);
                         } else if (mines[i - 3][j - 1] == 0) {
                             Set<Point> set = new HashSet<>();
                             int[] var = new int[2];
@@ -467,7 +517,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                         }
                     }
                     if(checkIfGameWon()){
-                        buttons[1][4].setIcon(Bro);
+                        paintFace(Bro1, Bro2, Bro3, Bro4);
                         addAllFlags();
                         disableAllButtons();
                     }
