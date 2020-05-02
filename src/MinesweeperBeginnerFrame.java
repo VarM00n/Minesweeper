@@ -2,7 +2,6 @@ import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.text.Utilities;
 import java.awt.*;
 import java.util.Set;
 import java.util.HashSet;
@@ -28,7 +27,6 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     /**
      * FIll
      */
-    private Icon Fill = new ImageIcon("src\\pics\\Border\\Blank.png");
     private Icon FillWithBorder = new ImageIcon("src\\pics\\Border\\BlankWithBorder.png");
     private Icon Logo = new ImageIcon("src\\pics\\Border\\Logo.png");
 
@@ -36,15 +34,16 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
      * Timer/Mines
      */
     private Icon Zeros = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
-    private Icon Ones = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
-    private Icon Twos = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
-    private Icon Threes = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
-    private Icon Fours = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
-    private Icon Sixs = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
-    private Icon Sevens = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
-    private Icon Ejghts = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
-    private Icon Nines = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
-    private Icon minuss = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
+    private Icon Ones = new ImageIcon("src\\pics\\Timer\\TimerOne.png");
+    private Icon Twos = new ImageIcon("src\\pics\\Timer\\TimerTwo.png");
+    private Icon Threes = new ImageIcon("src\\pics\\Timer\\TimerThree.png");
+    private Icon Fours = new ImageIcon("src\\pics\\Timer\\TimerFour.png");
+    private Icon Fives = new ImageIcon("src\\pics\\Timer\\TimerFive.png");
+    private Icon Sixs = new ImageIcon("src\\pics\\Timer\\TimerSix.png");
+    private Icon Sevens = new ImageIcon("src\\pics\\Timer\\TimerSeven.png");
+    private Icon Ejghts = new ImageIcon("src\\pics\\Timer\\TimerEight.png");
+    private Icon Nines = new ImageIcon("src\\pics\\Timer\\TimerNine.png");
+    private Icon minuss = new ImageIcon("src\\pics\\Timer\\Timer-.png");
      /**
      * Faces
      */
@@ -69,9 +68,6 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
             private Icon Bro2 = new ImageIcon("src\\pics\\Faces\\Bro\\B2.png");
             private Icon Bro3 = new ImageIcon("src\\pics\\Faces\\Bro\\B3.png");
             private Icon Bro4 = new ImageIcon("src\\pics\\Faces\\Bro\\B4.png");
-
-
-    private Icon Bro = new ImageIcon("src\\pics\\Faces\\BroFace.png");
     /**
      * Game
      */
@@ -94,9 +90,10 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
      * It also contains numbers of neighbour mines
      */
     int NUMBER_OF_MINES = 10;
+    int NUMBER_OF_MINES_FOR_COUNTER = 10;
+    int NUMBER_OF_FLAGS = 0;
+    int NUMBER_FOR_COUNTER = 0;
     private int [][] mines = new int[8][8];
-
-    int FLAG_COUNTER = 10;
 
     public MinesweeperBeginnerFrame(){
         super("Minesweeper");
@@ -253,8 +250,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                                 else
                                     temp.setIcon(Untouched);
                                 }
+                            countFlagsForMines();
                             }
-
                     });
                 }
                 buttons[i][j].setBorder(new EmptyBorder(0, 0, 0, 0));
@@ -296,12 +293,11 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
 
     public void addToMineTable(int number){
         int row = 0;
-        int column = 0;
         while(number > 8){
             number -= 8;
             row++;
         }
-        column = number;
+        int column = number;
         mines[row][column-1] = -1;
     }
 
@@ -429,6 +425,19 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         }
     }
 
+    public void countFlagsForMines(){
+        NUMBER_OF_FLAGS = 0;
+        for(int i = 3; i < 11; i++) {
+            for (int j = 1; j < 9; j++) {
+                if(buttons[i][j].getIcon() == Flag){
+                    NUMBER_OF_FLAGS++;
+                }
+            }
+        }
+        NUMBER_FOR_COUNTER = NUMBER_OF_MINES_FOR_COUNTER - NUMBER_OF_FLAGS;
+        System.out.println(NUMBER_FOR_COUNTER);
+    }
+
     public void paintFace(Icon F1, Icon F2,Icon F3,Icon F4){
         buttons[1][4].setIcon(F1);
         buttons[1][5].setIcon(F2);
@@ -515,6 +524,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                         } else if (mines[i - 3][j - 1] == 8) {
                             buttons[i][j].setIcon(EightB);
                         }
+                        countFlagsForMines();
                     }
                     if(checkIfGameWon()){
                         paintFace(Bro1, Bro2, Bro3, Bro4);
