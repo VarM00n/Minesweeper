@@ -185,6 +185,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
              */
                 if(i == 0 && j == 0) {
                     buttons[i][j] = new JButton(TopRightCorner);
+                    buttons[i][j].addActionListener(this);
                 }
                 else if(i == 11 && j == 0) {
                     buttons[i][j] = new JButton(DownRightCorner);
@@ -555,6 +556,9 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         if(source == buttons[1][4] || source == buttons[1][5]|| source == buttons[2][4] || source == buttons[2][5]){
             dispose();
             new MinesweeperBeginnerFrame();
+        }
+        if(source == buttons[0][0]){
+            showAllMines();
         }
         for(int i = 3; i < 11; i++){
             for(int j = 1; j < 9; j++){
