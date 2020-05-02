@@ -258,10 +258,11 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                                 if(temp.getIcon() == Untouched) {
                                     if (temp.getIcon() != Flag)
                                         temp.setIcon(Flag);
-                                    else temp.setIcon(Untouched);
-
                                 }
+                                else if(temp.getIcon()==Flag){
+                                    temp.setIcon(Untouched);
                                 }
+                            }
                             countFlagsForMines();
                             }
                     });
