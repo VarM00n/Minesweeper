@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MinesweeperP:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MinesweeperP_jar</output-path>
+    <root id="archive" name="MinesweeperP.jar">
+      <element id="module-output" name="MinesweeperP" />
+    </root>
+  </artifact>
+</component>

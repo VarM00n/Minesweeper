@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="MinesweeperP:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="95b53695-8323-447b-9d00-5bc6d98efbcc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MinesweeperP_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MinesweeperBeginnerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MinesweeperBeginnerFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Play.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Play.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +37,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager" selected="Application.Play">
@@ -79,7 +86,7 @@
       <workItem from="1588287651136" duration="1273000" />
       <workItem from="1588328497277" duration="36480000" />
       <workItem from="1588416481691" duration="42000" />
-      <workItem from="1588417074514" duration="10130000" />
+      <workItem from="1588417074514" duration="10658000" />
     </task>
     <servers />
   </component>
@@ -91,10 +98,18 @@
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state x="375" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588274535847" />
+    <state x="617" y="343" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1588427495910">
+      <screen x="0" y="0" width="1842" height="1080" />
+    </state>
+    <state x="617" y="343" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588427495910" />
     <state x="682" y="182" key="#com.intellij.ide.util.MemberChooser" timestamp="1588426755837">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state x="682" y="182" key="#com.intellij.ide.util.MemberChooser/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588426755837" />
+    <state x="588" y="283" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588427944972">
+      <screen x="0" y="0" width="1842" height="1080" />
+    </state>
+    <state x="588" y="283" key="#com.intellij.ide.util.TreeClassChooserDialog/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588427944972" />
     <state x="588" y="229" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1588275553001">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
@@ -139,6 +154,10 @@
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1789" height="247" key="GridCell.Tab.1.right/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588418089325" />
+    <state x="273" y="11" key="SettingsEditor" timestamp="1588427987236">
+      <screen x="0" y="0" width="1842" height="1080" />
+    </state>
+    <state x="273" y="11" key="SettingsEditor/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588427987236" />
     <state x="548" y="323" key="com.intellij.ide.util.TipDialog" timestamp="1588416481691">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
