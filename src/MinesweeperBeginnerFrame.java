@@ -433,7 +433,6 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         mines[row][column-1] = -1;
     }
 
-
     /**
      *
      * @param min - minimal value of integer
@@ -457,111 +456,45 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
      */
 
     private void addToListNonRepeatable(Set<Point> set, int[] point){
-        if(GAME_LVL == 1 || GAME_LVL == 2) {
-            int[][] temporaryTable = new int[8][2];
-            // first position
-            temporaryTable[0][0] = point[0] - 1;
-            temporaryTable[0][1] = point[1] - 1;
-            // second position
-            temporaryTable[1][0] = point[0] - 1;
-            temporaryTable[1][1] = point[1];
-            // third position
-            temporaryTable[2][0] = point[0] - 1;
-            temporaryTable[2][1] = point[1] + 1;
-            // fourth position
-            temporaryTable[3][0] = point[0];
-            temporaryTable[3][1] = point[1] + 1;
-            // fifth position
-            temporaryTable[4][0] = point[0] + 1;
-            temporaryTable[4][1] = point[1] + 1;
-            // sixth position
-            temporaryTable[5][0] = point[0] + 1;
-            temporaryTable[5][1] = point[1];
-            // seventh position
-            temporaryTable[6][0] = point[0] + 1;
-            temporaryTable[6][1] = point[1] - 1;
-            // eight position
-            temporaryTable[7][0] = point[0];
-            temporaryTable[7][1] = point[1] - 1;
-            for (int k = 0; k < 8; k++) {
-                // check if any is out of bound: which is < 0 or > 7
-                if (GAME_LVL == 1) {
-                    if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > 7 ||
-                            temporaryTable[k][1] > 7)) {
-                        Point pNext = new Point();
-                        pNext.coordinates = temporaryTable[k];
-                        pNext.touched = false;
-                        int counter = 0;
-                        for (Point p : set) {
-                            if (Arrays.equals(pNext.coordinates, p.coordinates)) {
-                                counter++;
-                            }
-                        }
-                        if (counter == 0) {
-                            set.add(pNext);
-                        }
+        int[][] temporaryTable = new int[8][2];
+        // first position
+        temporaryTable[0][0] = point[0] - 1;
+        temporaryTable[0][1] = point[1] - 1;
+        // second position
+        temporaryTable[1][0] = point[0] - 1;
+        temporaryTable[1][1] = point[1];
+        // third position
+        temporaryTable[2][0] = point[0] - 1;
+        temporaryTable[2][1] = point[1] + 1;
+        // fourth position
+        temporaryTable[3][0] = point[0];
+        temporaryTable[3][1] = point[1] + 1;
+        // fifth position
+        temporaryTable[4][0] = point[0] + 1;
+        temporaryTable[4][1] = point[1] + 1;
+        // sixth position
+        temporaryTable[5][0] = point[0] + 1;
+        temporaryTable[5][1] = point[1];
+        // seventh position
+        temporaryTable[6][0] = point[0] + 1;
+        temporaryTable[6][1] = point[1] - 1;
+        // eight position
+        temporaryTable[7][0] = point[0];
+        temporaryTable[7][1] = point[1] - 1;
+        for (int k = 0; k < 8; k++) {
+            if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > ROWS - 5 ||
+                    temporaryTable[k][1] > COLS - 3)) {
+                Point pNext = new Point();
+                pNext.coordinates = temporaryTable[k];
+                pNext.touched = false;
+                int counter = 0;
+                for (Point p : set) {
+                    if (Arrays.equals(pNext.coordinates, p.coordinates)) {
+                        counter++;
                     }
                 }
-                if (GAME_LVL == 2) {
-                    if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > 15 ||
-                            temporaryTable[k][1] > 15)) {
-                        Point pNext = new Point();
-                        pNext.coordinates = temporaryTable[k];
-                        pNext.touched = false;
-                        int counter = 0;
-                        for (Point p : set) {
-                            if (Arrays.equals(pNext.coordinates, p.coordinates)) {
-                                counter++;
-                            }
-                        }
-                        if (counter == 0) {
-                            set.add(pNext);
-                        }
-                    }
-                }
-            }
-        }
-        if(GAME_LVL == 3){
-            int[][] temporaryTable = new int[8][2];
-            // first position
-            temporaryTable[0][0] = point[0] - 1;
-            temporaryTable[0][1] = point[1] - 1;
-            // second position
-            temporaryTable[1][0] = point[0] - 1;
-            temporaryTable[1][1] = point[1];
-            // third position
-            temporaryTable[2][0] = point[0] - 1;
-            temporaryTable[2][1] = point[1] + 1;
-            // fourth position
-            temporaryTable[3][0] = point[0];
-            temporaryTable[3][1] = point[1] + 1;
-            // fifth position
-            temporaryTable[4][0] = point[0] + 1;
-            temporaryTable[4][1] = point[1] + 1;
-            // sixth position
-            temporaryTable[5][0] = point[0] + 1;
-            temporaryTable[5][1] = point[1];
-            // seventh position
-            temporaryTable[6][0] = point[0] + 1;
-            temporaryTable[6][1] = point[1] - 1;
-            // eight position
-            temporaryTable[7][0] = point[0];
-            temporaryTable[7][1] = point[1] - 1;
-            for (int k = 0; k < 8; k++) {
-                if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > 15 ||
-                        temporaryTable[k][1] > 29)) {
-                    Point pNext = new Point();
-                    pNext.coordinates = temporaryTable[k];
-                    pNext.touched = false;
-                    int counter = 0;
-                    for (Point p : set) {
-                        if (Arrays.equals(pNext.coordinates, p.coordinates)) {
-                            counter++;
-                        }
-                    }
-                    if (counter == 0) {
-                        set.add(pNext);
-                    }
+                if (counter == 0) {
+                    set.add(pNext);
                 }
             }
         }
