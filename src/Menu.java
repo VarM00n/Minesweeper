@@ -21,9 +21,13 @@ public class Menu extends JFrame implements ActionListener {
     private JButton Logo = new JButton();
 
     private Icon BeginnerB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Beginner.png");
+    private Icon BeginnerClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\BeginnerClicked.png");
     private Icon MediumB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Medium.png");
+    private Icon MediumClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\MediumClicked.png");
     private Icon HardB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Hard.png");
+    private Icon HardClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\HardClicked.png");
     private Icon CustomB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Custom.png");
+    private Icon CustomClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\CustomClicked.png");
     private Icon LogoB = new ImageIcon("src\\pics\\Menu\\LogoForMenu.png");
 
     public Menu(){
@@ -44,17 +48,44 @@ public class Menu extends JFrame implements ActionListener {
         setVisible(true);
     }
 
+
     public void setButtons(){
         Beginner.addActionListener(this);
         Beginner.setBorder(new EmptyBorder(0, 0, 0, 0));
         Beginner.setSize(200, 50);
         Beginner.setLocation(40,100);
         Beginner.setIcon(BeginnerB);
+        Beginner.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if(e.getButton() == MouseEvent.BUTTON1){
+                    Beginner.setIcon(BeginnerClickedB);
+                }
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                Beginner.setIcon(BeginnerB);
+            }
+        });
         add(Beginner);
         Medium.addActionListener(this);
         Medium.setBorder(new EmptyBorder(0, 0, 0, 0));
         Medium.setSize(177, 50);
         Medium.setLocation(40,175);
+        Medium.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if(e.getButton() == MouseEvent.BUTTON1){
+                    Medium.setIcon(MediumClickedB);
+                }
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                Medium.setIcon(MediumB);
+            }
+        });
         Medium.setIcon(MediumB);
         add(Medium);
         Hard.addActionListener(this);
@@ -62,6 +93,19 @@ public class Menu extends JFrame implements ActionListener {
         Hard.setSize(124, 50);
         Hard.setLocation(40,250);
         Hard.setIcon(HardB);
+        Hard.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if(e.getButton() == MouseEvent.BUTTON1){
+                    Hard.setIcon(HardClickedB);
+                }
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                Hard.setIcon(HardB);
+            }
+        });
         add(Hard);
         Logo.addActionListener(this);
         Logo.setBorder(new EmptyBorder(0, 0, 0, 0));
@@ -74,6 +118,19 @@ public class Menu extends JFrame implements ActionListener {
         Custom.setSize(174, 50);
         Custom.setLocation(40,325);
         Custom.setIcon(CustomB);
+        Custom.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                if(e.getButton() == MouseEvent.BUTTON1){
+                    Custom.setIcon(CustomClickedB);
+                }
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                Custom.setIcon(CustomB);
+            }
+        });
         add(Custom);
     }
 
