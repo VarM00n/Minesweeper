@@ -9,8 +9,46 @@ import java.util.Timer;
 
 public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
 
+    /**
+     * Beginner level
+     */
+    // rows -> 8 + 4 // cols -> 8 + 2 // minesB -> 10
+    int rowsB = 12;
+    int colsB = 10;
+    int minesB = 10;
 
-    private JButton [][] buttons = new JButton[12][10];
+    /**
+     * Medium level
+     */
+    // rows -> 16 + 4 // cols -> 16 + 2 // minesB -> 40
+    int rowsM = 20;
+    int colsM = 18;
+    int minesM = 40;
+
+    /**
+     * Hard level
+     */
+    // rows -> 16 + 4 // cols -> 30 + 2 // minesB -> 99
+    int rowsH = 20;
+    int colsH = 32;
+    int minesH = 99;
+
+
+    /**
+     * For usage
+     */
+    int ROWS = 0;
+    int COLS = 0;
+    int NUMBER_OF_MINES = 0;
+    private JButton [][] buttons;
+    private int [][] mines;
+    int NUMBER_OF_MINES_FOR_COUNTER = 0;
+    int NUMBER_OF_FLAGS = 0;
+    int NUMBER_FOR_COUNTER = 0;
+    int SECONDS_COUNTER = 0;
+    boolean GAME_STATUS = true;
+    int GAME_LVL = 0;
+
     /**
      * Corners
      */
@@ -30,6 +68,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
      */
     private Icon FillWithBorder = new ImageIcon("src\\pics\\Border\\BlankWithBorder.png");
     private Icon Logo = new ImageIcon("src\\pics\\Border\\Logo.png");
+    private Icon Blank = new ImageIcon("src\\pics\\Border\\Blank.png");
 
     /**
      * Timer/Mines
@@ -86,23 +125,16 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     private Icon NotClicked = new ImageIcon("src\\pics\\Game\\BombNotClicked.png");
     private Icon Flag = new ImageIcon("src\\pics\\Game\\flag.png");
 
-    /**
-     * Mines - -1
-     * It also contains numbers of neighbour mines
-     */
-    int NUMBER_OF_MINES = 10;
-    int NUMBER_OF_MINES_FOR_COUNTER = 10;
-    int NUMBER_OF_FLAGS = 0;
-    int NUMBER_FOR_COUNTER = 0;
-    int SECONDS_COUNTER = 0;
-    private int [][] mines = new int[8][8];
-    boolean GAME_STATUS = true;
+
 
     public MinesweeperBeginnerFrame(){
         super("Minesweeper");
+        lvlChoose(3);
+        buttons = new JButton[ROWS][COLS];
+        mines = new int[ROWS - 4][COLS - 2];
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new GridLayout(12, 10));
-        setSize(266, 339);
+        setLayout(new GridLayout(ROWS, COLS));
+        setSize(COLS*25 + 16, ROWS*25 + 39);
         enableInputMethods(true);
         this.setResizable(false);
         drawBoard();
@@ -122,54 +154,135 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         }, 1000, 1000);
     }
 
+    public void lvlChoose(int lvl){
+        if(lvl == 1){
+            ROWS = rowsB;
+            COLS = colsB;
+            NUMBER_OF_MINES = minesB;
+            NUMBER_OF_MINES_FOR_COUNTER = minesB;
+        }
+        else if(lvl == 2){
+            ROWS = rowsM;
+            COLS = colsM;
+            NUMBER_OF_MINES = minesM;
+            NUMBER_OF_MINES_FOR_COUNTER = minesM;
+        }
+        else if(lvl == 3){
+            ROWS = rowsH;
+            COLS = colsH;
+            NUMBER_OF_MINES = minesH;
+            NUMBER_OF_MINES_FOR_COUNTER = minesH;
+        }
+        GAME_LVL = lvl;
+    }
+
     /**
      * Function to count all nearby mines on board
      */
 
     public void countNeighbourMines(){
-        for(int i = 0; i < 8; i++){
-            for(int j = 0; j < 8; j++){
-                // check if its a mine if is dont change
-                if(mines[i][j] != -1) {
-                    int[][] temporaryTable = new int[8][2];
-                    // first position
-                    temporaryTable[0][0] = i - 1;
-                    temporaryTable[0][1] = j - 1;
-                    // second position
-                    temporaryTable[1][0] = i - 1;
-                    temporaryTable[1][1] = j;
-                    // third position
-                    temporaryTable[2][0] = i - 1;
-                    temporaryTable[2][1] = j + 1;
-                    // fourth position
-                    temporaryTable[3][0] = i;
-                    temporaryTable[3][1] = j + 1;
-                    // fifth position
-                    temporaryTable[4][0] = i + 1;
-                    temporaryTable[4][1] = j + 1;
-                    // sixth position
-                    temporaryTable[5][0] = i + 1;
-                    temporaryTable[5][1] = j;
-                    // seventh position
-                    temporaryTable[6][0] = i + 1;
-                    temporaryTable[6][1] = j - 1;
-                    // eight position
-                    temporaryTable[7][0] = i;
-                    temporaryTable[7][1] = j - 1;
-                    int count = 0;
-                    for (int k = 0; k < 8; k++) {
-                        // check if any is out of bound: which is < 0 or > 7
-                        if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > 7 ||
-                                temporaryTable[k][1] > 7)) {
-                            // if not check if mine is there
-                            if(mines[temporaryTable[k][0]][temporaryTable[k][1]] == -1){
-                                count++;
+        if(GAME_LVL == 1 || GAME_LVL == 2) {
+            for (int i = 0; i < ROWS - 4; i++) {
+                for (int j = 0; j < COLS - 2; j++) {
+                    // check if its a mine if is dont change
+                    if (mines[i][j] != -1) {
+                        int[][] temporaryTable = new int[8][2];
+                        // first position
+                        temporaryTable[0][0] = i - 1;
+                        temporaryTable[0][1] = j - 1;
+                        // second position
+                        temporaryTable[1][0] = i - 1;
+                        temporaryTable[1][1] = j;
+                        // third position
+                        temporaryTable[2][0] = i - 1;
+                        temporaryTable[2][1] = j + 1;
+                        // fourth position
+                        temporaryTable[3][0] = i;
+                        temporaryTable[3][1] = j + 1;
+                        // fifth position
+                        temporaryTable[4][0] = i + 1;
+                        temporaryTable[4][1] = j + 1;
+                        // sixth position
+                        temporaryTable[5][0] = i + 1;
+                        temporaryTable[5][1] = j;
+                        // seventh position
+                        temporaryTable[6][0] = i + 1;
+                        temporaryTable[6][1] = j - 1;
+                        // eight position
+                        temporaryTable[7][0] = i;
+                        temporaryTable[7][1] = j - 1;
+                        int count = 0;
+                        for (int k = 0; k < 8; k++) {
+                            // check if any is out of bound: which is < 0 or > 7
+                            if (GAME_LVL == 1) {
+                                if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > 7 ||
+                                        temporaryTable[k][1] > 7)) {
+                                    // if not check if mine is there
+                                    if (mines[temporaryTable[k][0]][temporaryTable[k][1]] == -1) {
+                                        count++;
+                                    }
+                                }
+                            }
+                            if (GAME_LVL == 2) {
+                                if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > 15 ||
+                                        temporaryTable[k][1] > 15)) {
+                                    // if not check if mine is there
+                                    if (mines[temporaryTable[k][0]][temporaryTable[k][1]] == -1) {
+                                        count++;
+                                    }
+                                }
                             }
                         }
+                        mines[i][j] = count;
                     }
-                    mines[i][j] = count;
                 }
             }
+        }
+        if(GAME_LVL == 3) {
+            for (int i = 0; i < ROWS - 4; i++) {
+                for (int j = 0; j < COLS - 2; j++) {
+                    // check if its a mine if is dont change
+                    if (mines[i][j] != -1) {
+                        int[][] temporaryTable = new int[8][2];
+                        // first position
+                        temporaryTable[0][1] = i - 1;
+                        temporaryTable[0][0] = j - 1;
+                        // second position
+                        temporaryTable[1][1] = i - 1;
+                        temporaryTable[1][0] = j;
+                        // third position
+                        temporaryTable[2][1] = i - 1;
+                        temporaryTable[2][0] = j + 1;
+                        // fourth position
+                        temporaryTable[3][1] = i;
+                        temporaryTable[3][0] = j + 1;
+                        // fifth position
+                        temporaryTable[4][1] = i + 1;
+                        temporaryTable[4][0] = j + 1;
+                        // sixth position
+                        temporaryTable[5][1] = i + 1;
+                        temporaryTable[5][0] = j;
+                        // seventh position
+                        temporaryTable[6][1] = i + 1;
+                        temporaryTable[6][0] = j - 1;
+                        // eight position
+                        temporaryTable[7][1] = i;
+                        temporaryTable[7][0] = j - 1;
+                        int count = 0;
+                        for (int k = 0; k < 8; k++) {
+                            if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > 29 ||
+                                    temporaryTable[k][1] > 15)) {
+                                // if not check if mine is there
+                                if (mines[temporaryTable[k][1]][temporaryTable[k][0]] == -1) {
+                                    count++;
+                                }
+                            }
+                        }
+                        mines[i][j] = count;
+                    }
+                }
+            }
+
         }
     }
 
@@ -178,8 +291,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
      */
 
     public void drawBoard(){
-        for(int i = 0; i < 12; i++){
-            for(int j = 0; j < 10; j++){
+        for(int i = 0; i < ROWS; i++){
+            for(int j = 0; j < COLS; j++){
             /*
               Borders & Corners
              */
@@ -187,13 +300,13 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                     buttons[i][j] = new JButton(TopRightCorner);
                     buttons[i][j].addActionListener(this);
                 }
-                else if(i == 11 && j == 0) {
+                else if(i == ROWS - 1 && j == 0) {
                     buttons[i][j] = new JButton(DownRightCorner);
                 }
-                else if(i == 0 && j == 9){
+                else if(i == 0 && j == COLS - 1){
                     buttons[i][j] = new JButton(TopLeftCorner);
                 }
-                else if(i == 11 && j == 9){
+                else if(i == ROWS - 1 && j == COLS - 1){
                     buttons[i][j] = new JButton(DownLeftCorner);
                 }
                 else if(i == 0) {
@@ -202,10 +315,10 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                 else if(j == 0) {
                     buttons[i][j] = new JButton(LeftBorder);
                 }
-                else if(j == 9){
+                else if(j == COLS - 1){
                     buttons[i][j] = new JButton(RightBorder);
                 }
-                else if(i == 11){
+                else if(i == ROWS - 1){
                     buttons[i][j] = new JButton(DownBorder);
                 }
              /*
@@ -217,32 +330,35 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
              /*
               Timer counter
              */
-                else if(i == 1 && (j == 6 || j == 7 || j == 8)){
+                else if(i == 1 && (j == COLS - 4 || j == COLS - 3 || j == COLS - 2)){
                     buttons[i][j] = new JButton(Zeros);
                 }
              /*
               Face
              */
-                else if((i == 1 && j == 4)){
+                else if((i == 1 && j == COLS/2 - 1)){
                     buttons[i][j] = new JButton(Smile1);
                     buttons[i][j].addActionListener(this);
                 }
-                else if(i == 1){
+                else if(i == 1 && j == COLS/2){
                     buttons[i][j] = new JButton(Smile2);
                     buttons[i][j].addActionListener(this);
                 }
-                else if(i == 2 && j == 4){
+                else if(i == 1) {
+                    buttons[i][j] = new JButton(Blank);
+                    buttons[i][j].addActionListener(this);
+                }else if(i == 2 && j == COLS/2 - 1){
                     buttons[i][j] = new JButton(Smile4);
                     buttons[i][j].addActionListener(this);
                 }
-                else if(i == 2 && j == 5){
+                else if(i == 2 && j == COLS/2 ){
                     buttons[i][j] = new JButton(Smile3);
                     buttons[i][j].addActionListener(this);
                 }
              /*
               Upper fill
              */
-                else if((i == 2 && j == 8) ){
+                else if((i == 2 && j == COLS - 2) ){
                     buttons[i][j] = new JButton(Logo);
                 }
                 else if(i == 2){
@@ -279,14 +395,14 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
      */
 
     public void generateMines(){
-        int [] temporaryTable = new int[10];
-        for(int i = 0; i < 10; i++){
-            temporaryTable[i] = 65;
+        int [] temporaryTable = new int[NUMBER_OF_MINES];
+        for(int i = 0; i < NUMBER_OF_MINES; i++){
+            temporaryTable[i] = (ROWS - 4)*(COLS-2);
         }
         while(NUMBER_OF_MINES > 0){
-            int numberToCheck = getRandomNumberInRange(1, 64);
+            int numberToCheck = getRandomNumberInRange(1, (ROWS - 4)*(COLS-2));
             boolean check = false;
-            for(int i = 0; i < 10; i++){
+            for(int i = 0; i < NUMBER_OF_MINES; i++){
                 if (numberToCheck == temporaryTable[i]) {
                     check = true;
                     break;
@@ -307,8 +423,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
 
     public void addToMineTable(int number){
         int row = 0;
-        while(number > 8){
-            number -= 8;
+        while(number > COLS - 2){
+            number -= (COLS - 2);
             row++;
         }
         int column = number;
@@ -339,49 +455,114 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
      */
 
     private void addToListNonRepeatable(Set<Point> set, int[] point){
-        int[][] temporaryTable = new int[8][2];
-        // first position
-        temporaryTable[0][0] = point[0] - 1;
-        temporaryTable[0][1] = point[1] - 1;
-        // second position
-        temporaryTable[1][0] = point[0] - 1;
-        temporaryTable[1][1] = point[1];
-        // third position
-        temporaryTable[2][0] = point[0] - 1;
-        temporaryTable[2][1] = point[1] + 1;
-        // fourth position
-        temporaryTable[3][0] = point[0];
-        temporaryTable[3][1] = point[1] + 1;
-        // fifth position
-        temporaryTable[4][0] = point[0] + 1;
-        temporaryTable[4][1] = point[1] + 1;
-        // sixth position
-        temporaryTable[5][0] = point[0] + 1;
-        temporaryTable[5][1] = point[1];
-        // seventh position
-        temporaryTable[6][0] = point[0] + 1;
-        temporaryTable[6][1] = point[1] - 1;
-        // eight position
-        temporaryTable[7][0] = point[0];
-        temporaryTable[7][1] = point[1] - 1;
-        for (int k = 0; k < 8; k++) {
-            // check if any is out of bound: which is < 0 or > 7
-            if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > 7 ||
-                                  temporaryTable[k][1] > 7)) {
-                Point pNext = new Point();
-                pNext.coordinates = temporaryTable[k];
-                pNext.touched = false;
-                int counter = 0;
-                for(Point p: set) {
-                    if(Arrays.equals(pNext.coordinates, p.coordinates)){
-                        counter++;
+        if(GAME_LVL == 1 || GAME_LVL == 2) {
+            int[][] temporaryTable = new int[8][2];
+            // first position
+            temporaryTable[0][0] = point[0] - 1;
+            temporaryTable[0][1] = point[1] - 1;
+            // second position
+            temporaryTable[1][0] = point[0] - 1;
+            temporaryTable[1][1] = point[1];
+            // third position
+            temporaryTable[2][0] = point[0] - 1;
+            temporaryTable[2][1] = point[1] + 1;
+            // fourth position
+            temporaryTable[3][0] = point[0];
+            temporaryTable[3][1] = point[1] + 1;
+            // fifth position
+            temporaryTable[4][0] = point[0] + 1;
+            temporaryTable[4][1] = point[1] + 1;
+            // sixth position
+            temporaryTable[5][0] = point[0] + 1;
+            temporaryTable[5][1] = point[1];
+            // seventh position
+            temporaryTable[6][0] = point[0] + 1;
+            temporaryTable[6][1] = point[1] - 1;
+            // eight position
+            temporaryTable[7][0] = point[0];
+            temporaryTable[7][1] = point[1] - 1;
+            for (int k = 0; k < 8; k++) {
+                // check if any is out of bound: which is < 0 or > 7
+                if (GAME_LVL == 1) {
+                    if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > 7 ||
+                            temporaryTable[k][1] > 7)) {
+                        Point pNext = new Point();
+                        pNext.coordinates = temporaryTable[k];
+                        pNext.touched = false;
+                        int counter = 0;
+                        for (Point p : set) {
+                            if (Arrays.equals(pNext.coordinates, p.coordinates)) {
+                                counter++;
+                            }
+                        }
+                        if (counter == 0) {
+                            set.add(pNext);
+                        }
                     }
                 }
-                if(counter == 0) {
-                    set.add(pNext);
-                }
+                if (GAME_LVL == 2) {
+                    if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > 15 ||
+                            temporaryTable[k][1] > 15)) {
+                        Point pNext = new Point();
+                        pNext.coordinates = temporaryTable[k];
+                        pNext.touched = false;
+                        int counter = 0;
+                        for (Point p : set) {
+                            if (Arrays.equals(pNext.coordinates, p.coordinates)) {
+                                counter++;
+                            }
+                        }
+                        if (counter == 0) {
+                            set.add(pNext);
+                        }
+                    }
                 }
             }
+        }
+        if(GAME_LVL == 3){
+            int[][] temporaryTable = new int[8][2];
+            // first position
+            temporaryTable[0][0] = point[0] - 1;
+            temporaryTable[0][1] = point[1] - 1;
+            // second position
+            temporaryTable[1][0] = point[0] - 1;
+            temporaryTable[1][1] = point[1];
+            // third position
+            temporaryTable[2][0] = point[0] - 1;
+            temporaryTable[2][1] = point[1] + 1;
+            // fourth position
+            temporaryTable[3][0] = point[0];
+            temporaryTable[3][1] = point[1] + 1;
+            // fifth position
+            temporaryTable[4][0] = point[0] + 1;
+            temporaryTable[4][1] = point[1] + 1;
+            // sixth position
+            temporaryTable[5][0] = point[0] + 1;
+            temporaryTable[5][1] = point[1];
+            // seventh position
+            temporaryTable[6][0] = point[0] + 1;
+            temporaryTable[6][1] = point[1] - 1;
+            // eight position
+            temporaryTable[7][0] = point[0];
+            temporaryTable[7][1] = point[1] - 1;
+            for (int k = 0; k < 8; k++) {
+                if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > 15 ||
+                        temporaryTable[k][1] > 29)) {
+                    Point pNext = new Point();
+                    pNext.coordinates = temporaryTable[k];
+                    pNext.touched = false;
+                    int counter = 0;
+                    for (Point p : set) {
+                        if (Arrays.equals(pNext.coordinates, p.coordinates)) {
+                            counter++;
+                        }
+                    }
+                    if (counter == 0) {
+                        set.add(pNext);
+                    }
+                }
+            }
+        }
     }
 
     /**
@@ -417,8 +598,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     }
 
     public boolean checkIfGameWon(){
-        for(int i = 3; i < 11; i++) {
-            for (int j = 1; j < 9; j++) {
+        for(int i = 3; i < ROWS - 1; i++) {
+            for (int j = 1; j < COLS - 1; j++) {
                 if(mines[i-3][j-1] != -1){
                     if(buttons[i][j].getIcon() == Untouched){
                         return false;
@@ -430,8 +611,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     }
 
     public void addAllFlags(){
-        for(int i = 3; i < 11; i++) {
-            for (int j = 1; j < 9; j++) {
+        for(int i = 3; i < ROWS - 1; i++) {
+            for (int j = 1; j < COLS - 1; j++) {
                 if(mines[i-3][j-1] == -1 && buttons[i][j].getIcon() != Flag){
                     buttons[i][j].setIcon(Flag);
                 }
@@ -441,8 +622,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
 
     public void countFlagsForMines(){
         NUMBER_OF_FLAGS = 0;
-        for(int i = 3; i < 11; i++) {
-            for (int j = 1; j < 9; j++) {
+        for(int i = 3; i <ROWS - 1; i++) {
+            for (int j = 1; j < COLS - 1; j++) {
                 if(buttons[i][j].getIcon() == Flag){
                     NUMBER_OF_FLAGS++;
                 }
@@ -507,8 +688,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     }
 
     public void showAllMines(){
-        for(int i = 3; i < 11; i++) {
-            for (int j = 1; j < 9; j++) {
+        for(int i = 3; i < ROWS - 1; i++) {
+            for (int j = 1; j < COLS - 1; j++) {
                 if(mines[i-3][j-1] == -1){
                     buttons[i][j].setIcon(NotClicked);
                 }
@@ -517,8 +698,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     }
 
     public void disableAllButtons(){
-        for(int i = 3; i < 11; i++){
-            for(int j = 1; j < 9; j++) {
+        for(int i = 3; i < ROWS - 1; i++){
+            for(int j = 1; j < COLS - 1; j++) {
                 buttons[i][j].setEnabled(false);
                 buttons[i][j].setDisabledIcon(buttons[i][j].getIcon());
             }
@@ -544,24 +725,24 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                 ones = temp - tens * 10;
             }
             //i == 1 && (j == 6 || j == 7 || j == 8
-            buttons[1][6].setIcon(checkNumber(hundreds));
-            buttons[1][7].setIcon(checkNumber(tens));
-            buttons[1][8].setIcon(checkNumber(ones));
+            buttons[1][COLS - 4].setIcon(checkNumber(hundreds));
+            buttons[1][COLS - 3].setIcon(checkNumber(tens));
+            buttons[1][COLS - 2].setIcon(checkNumber(ones));
         }
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-        if(source == buttons[1][4] || source == buttons[1][5]|| source == buttons[2][4] || source == buttons[2][5]){
+        if(source == buttons[1][COLS/2 - 1] || source == buttons[1][COLS/2] || source == buttons[2][COLS/2 - 1] || source == buttons[2][COLS/2]){
             dispose();
             new MinesweeperBeginnerFrame();
         }
         if(source == buttons[0][0]){
             showAllMines();
         }
-        for(int i = 3; i < 11; i++){
-            for(int j = 1; j < 9; j++){
+        for(int i = 3; i < ROWS - 1; i++){
+            for(int j = 1; j < COLS - 1; j++){
                 if(source == buttons[i][j]) {
                     if (buttons[i][j].getIcon() != Flag) {
                         if (mines[i - 3][j - 1] == -1) {
