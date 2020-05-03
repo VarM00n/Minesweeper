@@ -7,14 +7,68 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95b53695-8323-447b-9d00-5bc6d98efbcc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/Play.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/Play.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MinesweeperBeginnerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MinesweeperBeginnerFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Play.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Play.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Bomb/B1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Bomb/B2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Bomb/B3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Bomb/B4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Easy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/EasyButton/Ez1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/EasyButton/Ez10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/EasyButton/Ez11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/EasyButton/Ez12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/EasyButton/Ez2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/EasyButton/Ez3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/EasyButton/Ez4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/EasyButton/Ez5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/EasyButton/Ez6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/EasyButton/Ez7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/EasyButton/Ez8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/EasyButton/Ez9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Flag/F1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Flag/F2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Flag/F3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Flag/F4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Hard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/HardButton/H1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/HardButton/H10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/HardButton/H11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/HardButton/H12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/HardButton/H2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/HardButton/H3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/HardButton/H4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/HardButton/H5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/HardButton/H6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/HardButton/H7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/HardButton/H8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/HardButton/H9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Medium.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/MediumButton/M1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/MediumButton/M10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/MediumButton/M11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/MediumButton/M12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/MediumButton/M2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/MediumButton/M3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/MediumButton/M4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/MediumButton/M5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/MediumButton/M6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/MediumButton/M7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/MediumButton/M8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/MediumButton/M9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/One/O1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/One/O2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/One/O3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/One/O4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Three/TH1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Three/TH2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Three/TH3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Three/TH4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Two/T1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Two/T2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Two/T3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/Two/T4.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +147,8 @@
       <workItem from="1588416481691" duration="42000" />
       <workItem from="1588417074514" duration="15080000" />
       <workItem from="1588439616456" duration="240000" />
-      <workItem from="1588460660262" duration="16980000" />
+      <workItem from="1588460660262" duration="17026000" />
+      <workItem from="1588498836702" duration="8613000" />
     </task>
     <servers />
   </component>
@@ -109,10 +164,10 @@
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state x="617" y="343" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588427495910" />
-    <state x="682" y="182" key="#com.intellij.ide.util.MemberChooser" timestamp="1588469472965">
+    <state x="682" y="182" key="#com.intellij.ide.util.MemberChooser" timestamp="1588532488491">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
-    <state x="682" y="182" key="#com.intellij.ide.util.MemberChooser/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588469472965" />
+    <state x="682" y="182" key="#com.intellij.ide.util.MemberChooser/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588532488491" />
     <state x="588" y="283" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1588427944972">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
@@ -125,50 +180,50 @@
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state x="651" y="238" key="FileChooserDialogImpl/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588416524141" />
-    <state width="1789" height="282" key="GridCell.Tab.0.bottom" timestamp="1588478062323">
+    <state width="1789" height="282" key="GridCell.Tab.0.bottom" timestamp="1588536944507">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1405" height="282" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1588421580662" />
-    <state width="1789" height="282" key="GridCell.Tab.0.bottom/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588478062323" />
-    <state width="1789" height="282" key="GridCell.Tab.0.center" timestamp="1588478062323">
+    <state width="1789" height="282" key="GridCell.Tab.0.bottom/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588536944507" />
+    <state width="1789" height="282" key="GridCell.Tab.0.center" timestamp="1588536944507">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1405" height="282" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1588421580662" />
-    <state width="1789" height="282" key="GridCell.Tab.0.center/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588478062323" />
-    <state width="1789" height="282" key="GridCell.Tab.0.left" timestamp="1588478062322">
+    <state width="1789" height="282" key="GridCell.Tab.0.center/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588536944507" />
+    <state width="1789" height="282" key="GridCell.Tab.0.left" timestamp="1588536944507">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1405" height="282" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1588421580662" />
-    <state width="1789" height="282" key="GridCell.Tab.0.left/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588478062322" />
-    <state width="1789" height="282" key="GridCell.Tab.0.right" timestamp="1588478062323">
+    <state width="1789" height="282" key="GridCell.Tab.0.left/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588536944507" />
+    <state width="1789" height="282" key="GridCell.Tab.0.right" timestamp="1588536944507">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1405" height="282" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1588421580662" />
-    <state width="1789" height="282" key="GridCell.Tab.0.right/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588478062323" />
-    <state width="1789" height="327" key="GridCell.Tab.1.bottom" timestamp="1588477768269">
+    <state width="1789" height="282" key="GridCell.Tab.0.right/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588536944507" />
+    <state width="1789" height="327" key="GridCell.Tab.1.bottom" timestamp="1588478134482">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
-    <state width="1789" height="327" key="GridCell.Tab.1.bottom/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588477768269" />
-    <state width="1789" height="327" key="GridCell.Tab.1.center" timestamp="1588477768269">
+    <state width="1789" height="327" key="GridCell.Tab.1.bottom/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588478134482" />
+    <state width="1789" height="327" key="GridCell.Tab.1.center" timestamp="1588478134482">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
-    <state width="1789" height="327" key="GridCell.Tab.1.center/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588477768269" />
-    <state width="1789" height="327" key="GridCell.Tab.1.left" timestamp="1588477768269">
+    <state width="1789" height="327" key="GridCell.Tab.1.center/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588478134482" />
+    <state width="1789" height="327" key="GridCell.Tab.1.left" timestamp="1588478134482">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
-    <state width="1789" height="327" key="GridCell.Tab.1.left/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588477768269" />
-    <state width="1789" height="327" key="GridCell.Tab.1.right" timestamp="1588477768269">
+    <state width="1789" height="327" key="GridCell.Tab.1.left/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588478134482" />
+    <state width="1789" height="327" key="GridCell.Tab.1.right" timestamp="1588478134482">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
-    <state width="1789" height="327" key="GridCell.Tab.1.right/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588477768269" />
+    <state width="1789" height="327" key="GridCell.Tab.1.right/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588478134482" />
     <state x="273" y="11" key="SettingsEditor" timestamp="1588427987236">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state x="273" y="11" key="SettingsEditor/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588427987236" />
-    <state x="548" y="323" key="com.intellij.ide.util.TipDialog" timestamp="1588460659455">
+    <state x="548" y="323" key="com.intellij.ide.util.TipDialog" timestamp="1588499312598">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
-    <state x="548" y="323" key="com.intellij.ide.util.TipDialog/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588460659455" />
+    <state x="548" y="323" key="com.intellij.ide.util.TipDialog/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588499312598" />
     <state x="500" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1588472478749">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
