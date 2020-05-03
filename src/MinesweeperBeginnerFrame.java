@@ -127,9 +127,10 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
 
 
 
-    public MinesweeperBeginnerFrame(){
+    public MinesweeperBeginnerFrame(int lvl){
         super("Minesweeper");
-        lvlChoose(3);
+        lvlChoose(lvl);
+        GAME_LVL = lvl;
         buttons = new JButton[ROWS][COLS];
         mines = new int[ROWS - 4][COLS - 2];
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -396,19 +397,20 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
 
     public void generateMines(){
         int [] temporaryTable = new int[NUMBER_OF_MINES];
+        int TemporaryNumberOfMines = NUMBER_OF_MINES;
         for(int i = 0; i < NUMBER_OF_MINES; i++){
-            temporaryTable[i] = (ROWS - 4)*(COLS-2);
+            temporaryTable[i] = (ROWS - 4)*(COLS-2) + 1;
         }
         while(NUMBER_OF_MINES > 0){
             int numberToCheck = getRandomNumberInRange(1, (ROWS - 4)*(COLS-2));
-            boolean check = false;
-            for(int i = 0; i < NUMBER_OF_MINES; i++){
+            int check = 0;
+            for(int i = 0; i < TemporaryNumberOfMines; i++){
                 if (numberToCheck == temporaryTable[i]) {
-                    check = true;
+                    check = 1;
                     break;
                 }
             }
-            if(!check){
+            if(check == 0){
                 temporaryTable[NUMBER_OF_MINES-1] = numberToCheck;
                 addToMineTable(numberToCheck);
                 NUMBER_OF_MINES -= 1;
@@ -681,10 +683,10 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     }
 
     public void paintFace(Icon F1, Icon F2,Icon F3,Icon F4){
-        buttons[1][4].setIcon(F1);
-        buttons[1][5].setIcon(F2);
-        buttons[2][4].setIcon(F4);
-        buttons[2][5].setIcon(F3);
+        buttons[1][COLS/2 - 1].setIcon(F1);
+        buttons[1][COLS/2].setIcon(F2);
+        buttons[2][COLS/2 - 1].setIcon(F4);
+        buttons[2][COLS/2].setIcon(F3);
     }
 
     public void showAllMines(){
@@ -736,7 +738,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         Object source = e.getSource();
         if(source == buttons[1][COLS/2 - 1] || source == buttons[1][COLS/2] || source == buttons[2][COLS/2 - 1] || source == buttons[2][COLS/2]){
             dispose();
-            new MinesweeperBeginnerFrame();
+            new MinesweeperBeginnerFrame(GAME_LVL);
         }
         if(source == buttons[0][0]){
             showAllMines();
