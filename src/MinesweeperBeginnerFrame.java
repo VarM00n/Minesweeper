@@ -33,6 +33,13 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     int colsH = 32;
     int minesH = 99;
 
+    /**
+     * Custom
+     */
+    public int rowsC = 0;
+    public int colsC = 0;
+    public int minesC = 0;
+
 
     /**
      * For usage
@@ -48,6 +55,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     int SECONDS_COUNTER = 0;
     boolean GAME_STATUS = true;
     int GAME_LVL = 0;
+    int MINESS = 0;
 
     /**
      * Corners
@@ -127,10 +135,15 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
 
 
 
-    public MinesweeperBeginnerFrame(int lvl){
+    public MinesweeperBeginnerFrame(int lvl, int ROWs, int COLs, int MINEs){
         super("Minesweeper");
-        lvlChoose(lvl);
+//        lvlChoose(lvl);
         GAME_LVL = lvl;
+        ROWS = ROWs;
+        COLS = COLs;
+        MINESS = MINEs;
+        NUMBER_OF_MINES = MINESS;
+        NUMBER_OF_MINES_FOR_COUNTER = MINESS;
         buttons = new JButton[ROWS][COLS];
         mines = new int[ROWS - 4][COLS - 2];
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -239,7 +252,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                 }
             }
         }
-        if(GAME_LVL == 3) {
+        if(GAME_LVL == 3 || GAME_LVL == 4) {
             for (int i = 0; i < ROWS - 4; i++) {
                 for (int j = 0; j < COLS - 2; j++) {
                     // check if its a mine if is dont change
@@ -271,8 +284,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                         temporaryTable[7][0] = j - 1;
                         int count = 0;
                         for (int k = 0; k < 8; k++) {
-                            if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > 29 ||
-                                    temporaryTable[k][1] > 15)) {
+                            if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > COLS - 3 ||
+                                    temporaryTable[k][1] > ROWS - 5)) {
                                 // if not check if mine is there
                                 if (mines[temporaryTable[k][1]][temporaryTable[k][0]] == -1) {
                                     count++;
@@ -671,7 +684,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         Object source = e.getSource();
         if(source == buttons[1][COLS/2 - 1] || source == buttons[1][COLS/2] || source == buttons[2][COLS/2 - 1] || source == buttons[2][COLS/2]){
             dispose();
-            new MinesweeperBeginnerFrame(GAME_LVL);
+            new MinesweeperBeginnerFrame(GAME_LVL, ROWS, COLS, MINESS);
         }
         if(source == buttons[0][0]){
             showAllMines();
