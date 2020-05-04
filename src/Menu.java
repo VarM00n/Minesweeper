@@ -192,6 +192,7 @@ public class Menu extends JFrame implements ActionListener {
         Cols.setBackground(Color.LIGHT_GRAY);
         Mines.setBounds(370, 319, 40, 23);
         Mines.setBackground(Color.LIGHT_GRAY);
+        Rows.setText("");Cols.setText("");Mines.setText("");
     }
 
     public void paintBackground(String path){
@@ -200,6 +201,15 @@ public class Menu extends JFrame implements ActionListener {
         } catch (IOException e){
             e.printStackTrace();
         }
+    }
+
+    public boolean checkIfValid(String rows, String cols, String mines){
+        if(rows.equals("") || cols.equals("") || mines.equals("")){
+            return false;
+        }
+        return Integer.parseInt(Rows.getText()) >= 8 && Integer.parseInt(Cols.getText()) >= 8 &&
+                Integer.parseInt(Rows.getText()) <= 40 && Integer.parseInt(Rows.getText()) <= 60;
+
     }
 
     @Override
@@ -227,13 +237,14 @@ public class Menu extends JFrame implements ActionListener {
             Beginner.setEnabled(true);Medium.setEnabled(true);Hard.setEnabled(true);Custom.setEnabled(true);
             Rows.setText("");Cols.setText("");Mines.setText("");
         } else if(source == Ok){
-            if(Integer.parseInt(Rows.getText()) >= 8 && Integer.parseInt(Cols.getText()) >= 8 ){
-                dispose();
-                new MinesweeperBeginnerFrame(4, Integer.parseInt(Rows.getText()) + 4,
-                        Integer.parseInt(Cols.getText()) + 2, Integer.parseInt(Mines.getText()));
-            } else{
+            if(checkIfValid(Rows.getText(), Cols.getText(), Mines.getText())){
+                    dispose();
+                    new MinesweeperBeginnerFrame(4, Integer.parseInt(Rows.getText()) + 4,
+                            Integer.parseInt(Cols.getText()) + 2, Integer.parseInt(Mines.getText()));
+            }
+             else{
                 Rows.setText("");Cols.setText("");Mines.setText("");
             }
         }
+        }
     }
-}
