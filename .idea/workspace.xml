@@ -7,19 +7,166 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="95b53695-8323-447b-9d00-5bc6d98efbcc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/AfterCustom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/BeforeCustom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Border/Blank.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Border/BlankWithBorder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Border/DownBorder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Border/LeftBorder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Border/LeftDownCorner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Border/LeftUpCorner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Border/Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Border/RightBorder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Border/RightDownCorner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Border/RightUpCorner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Border/UpBorder.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/Bro/B1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/Bro/B2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/Bro/B3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/Bro/B4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/BroFace.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/Dead/D1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/Dead/D2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/Dead/D3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/Dead/D4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/DeadFace.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/Smile/S1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/Smile/S2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/Smile/S3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/Smile/S4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/SmileFace.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/WOW/W1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/WOW/W2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/WOW/W3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/WOW/W4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Faces/wowface.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/BombNotClicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/Eight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/Five.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/Four.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/One.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/Seven.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/Six.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/Three.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/Two.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/blankBlock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/bombClicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/bombClickedRed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/clickedBlock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/flag.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Game/flag_clicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Menu/LogoForMenu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Menu/LvlHardness/Beginner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Menu/LvlHardness/BeginnerClicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Menu/LvlHardness/Cancel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Menu/LvlHardness/CancelClicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Menu/LvlHardness/Custom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Menu/LvlHardness/CustomClicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Menu/LvlHardness/Hard.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Menu/LvlHardness/HardClicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Menu/LvlHardness/Medium.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Menu/LvlHardness/MediumClicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Menu/LvlHardness/Ok.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Menu/LvlHardness/OkClicked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/MenuPic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/MenuPicAfterCustom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Timer/Timer-.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Timer/TimerEight.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Timer/TimerFive.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Timer/TimerFour.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Timer/TimerNine.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Timer/TimerOne.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Timer/TimerSeven.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Timer/TimerSix.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Timer/TimerThree.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Timer/TimerTwo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/pics/Timer/TimerZero.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/MinesweeperP_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/MinesweeperP_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/Menu$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/Menu$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/Menu$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/Menu$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/Menu$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/Menu$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/Menu$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/Menu$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/Menu$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/Menu$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/Menu$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/Menu$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/Menu.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/Menu.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MinesweeperP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MinesweeperP.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/MinesweeperP_jar/MinesweeperP.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/MinesweeperBeginnerFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/MinesweeperP/Pics.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/MinesweeperP/Pics.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MinesweeperBeginnerFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MinesweeperBeginnerFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/AfterCustom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/BeforeCustom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Border/Blank.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Border/BlankWithBorder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Border/DownBorder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Border/LeftBorder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Border/LeftDownCorner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Border/LeftUpCorner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Border/Logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Border/RightBorder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Border/RightDownCorner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Border/RightUpCorner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Border/UpBorder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/Bro/B1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/Bro/B2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/Bro/B3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/Bro/B4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/BroFace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/Dead/D1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/Dead/D2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/Dead/D3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/Dead/D4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/DeadFace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/Smile/S1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/Smile/S2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/Smile/S3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/Smile/S4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/SmileFace.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/WOW/W1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/WOW/W2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/WOW/W3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/WOW/W4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Faces/wowface.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/BombNotClicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/Eight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/Five.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/Four.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/One.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/Seven.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/Six.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/Three.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/Two.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/blankBlock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/bombClicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/bombClickedRed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/clickedBlock.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/flag.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Game/flag_clicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/LogoForMenu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/LvlHardness/Beginner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/LvlHardness/BeginnerClicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/LvlHardness/Cancel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/LvlHardness/CancelClicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/LvlHardness/Custom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/LvlHardness/CustomClicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/LvlHardness/Hard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/LvlHardness/HardClicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/LvlHardness/Medium.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/LvlHardness/MediumClicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/LvlHardness/Ok.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Menu/LvlHardness/OkClicked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/MenuPic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/MenuPicAfterCustom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Timer/Timer-.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Timer/TimerEight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Timer/TimerFive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Timer/TimerFour.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Timer/TimerNine.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Timer/TimerOne.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Timer/TimerSeven.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Timer/TimerSix.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Timer/TimerThree.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Timer/TimerTwo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pics/Timer/TimerZero.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,12 +193,17 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../Snake-Java/SnakeJava" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projekty\JTp\Minesweeper\Minesweeper\res" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Play">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -102,7 +254,16 @@
       <workItem from="1588460660262" duration="17026000" />
       <workItem from="1588498836702" duration="22697000" />
       <workItem from="1588585454209" duration="1682000" />
-      <workItem from="1588597753583" duration="2086000" />
+      <workItem from="1588597753583" duration="4725000" />
+      <workItem from="1588617958773" duration="2148000" />
+      <workItem from="1588627758641" duration="199000" />
+      <workItem from="1588627997555" duration="2369000" />
+      <workItem from="1588720532911" duration="437000" />
+      <workItem from="1588758162247" duration="182000" />
+      <workItem from="1588839586033" duration="2852000" />
+      <workItem from="1589134982127" duration="191000" />
+      <workItem from="1589356560077" duration="566000" />
+      <workItem from="1591649516788" duration="420000" />
     </task>
     <servers />
   </component>
@@ -110,10 +271,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="413" y="116" key="#Project_Structure" timestamp="1588540188982">
+    <state x="413" y="116" key="#Project_Structure" timestamp="1588842293451">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
-    <state x="413" y="116" key="#Project_Structure/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588540188982" />
+    <state x="413" y="116" key="#Project_Structure/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588842293451" />
     <state x="375" y="188" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588274535847">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
@@ -138,30 +299,35 @@
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state x="588" y="238" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588540159191" />
-    <state x="651" y="238" key="FileChooserDialogImpl" timestamp="1588540180882">
-      <screen x="0" y="0" width="1842" height="1080" />
+    <state x="648" y="238" key="FileChooserDialogImpl" timestamp="1589357129956">
+      <screen x="0" y="0" width="1833" height="1080" />
     </state>
-    <state x="651" y="238" key="FileChooserDialogImpl/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588540180882" />
-    <state width="1789" height="282" key="GridCell.Tab.0.bottom" timestamp="1588599845664">
-      <screen x="0" y="0" width="1842" height="1080" />
+    <state x="648" y="238" key="FileChooserDialogImpl/1920.0.1466.864/0.0.1833.1080@0.0.1833.1080" timestamp="1589357129956" />
+    <state x="651" y="238" key="FileChooserDialogImpl/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588758343313" />
+    <state width="1404" height="273" key="GridCell.Tab.0.bottom" timestamp="1589135178853">
+      <screen x="0" y="0" width="1457" height="864" />
     </state>
+    <state width="1404" height="273" key="GridCell.Tab.0.bottom/0.0.1457.864@0.0.1457.864" timestamp="1589135178853" />
     <state width="1405" height="282" key="GridCell.Tab.0.bottom/0.0.1458.864@0.0.1458.864" timestamp="1588421580662" />
-    <state width="1789" height="282" key="GridCell.Tab.0.bottom/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588599845664" />
-    <state width="1789" height="282" key="GridCell.Tab.0.center" timestamp="1588599845664">
-      <screen x="0" y="0" width="1842" height="1080" />
+    <state width="1789" height="363" key="GridCell.Tab.0.bottom/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588842447634" />
+    <state width="1404" height="273" key="GridCell.Tab.0.center" timestamp="1589135178853">
+      <screen x="0" y="0" width="1457" height="864" />
     </state>
+    <state width="1404" height="273" key="GridCell.Tab.0.center/0.0.1457.864@0.0.1457.864" timestamp="1589135178853" />
     <state width="1405" height="282" key="GridCell.Tab.0.center/0.0.1458.864@0.0.1458.864" timestamp="1588421580662" />
-    <state width="1789" height="282" key="GridCell.Tab.0.center/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588599845664" />
-    <state width="1789" height="282" key="GridCell.Tab.0.left" timestamp="1588599845664">
-      <screen x="0" y="0" width="1842" height="1080" />
+    <state width="1789" height="363" key="GridCell.Tab.0.center/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588842447634" />
+    <state width="1404" height="273" key="GridCell.Tab.0.left" timestamp="1589135178852">
+      <screen x="0" y="0" width="1457" height="864" />
     </state>
+    <state width="1404" height="273" key="GridCell.Tab.0.left/0.0.1457.864@0.0.1457.864" timestamp="1589135178852" />
     <state width="1405" height="282" key="GridCell.Tab.0.left/0.0.1458.864@0.0.1458.864" timestamp="1588421580662" />
-    <state width="1789" height="282" key="GridCell.Tab.0.left/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588599845664" />
-    <state width="1789" height="282" key="GridCell.Tab.0.right" timestamp="1588599845664">
-      <screen x="0" y="0" width="1842" height="1080" />
+    <state width="1789" height="363" key="GridCell.Tab.0.left/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588842447634" />
+    <state width="1404" height="273" key="GridCell.Tab.0.right" timestamp="1589135178853">
+      <screen x="0" y="0" width="1457" height="864" />
     </state>
+    <state width="1404" height="273" key="GridCell.Tab.0.right/0.0.1457.864@0.0.1457.864" timestamp="1589135178853" />
     <state width="1405" height="282" key="GridCell.Tab.0.right/0.0.1458.864@0.0.1458.864" timestamp="1588421580662" />
-    <state width="1789" height="282" key="GridCell.Tab.0.right/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588599845664" />
+    <state width="1789" height="363" key="GridCell.Tab.0.right/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588842447634" />
     <state width="1789" height="327" key="GridCell.Tab.1.bottom" timestamp="1588595863110">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
@@ -178,14 +344,23 @@
       <screen x="0" y="0" width="1842" height="1080" />
     </state>
     <state width="1789" height="327" key="GridCell.Tab.1.right/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588595863109" />
-    <state x="273" y="11" key="SettingsEditor" timestamp="1588539463353">
-      <screen x="0" y="0" width="1842" height="1080" />
+    <state x="131" y="0" key="SettingsEditor" timestamp="1589135019267">
+      <screen x="0" y="0" width="1457" height="864" />
     </state>
-    <state x="273" y="11" key="SettingsEditor/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588539463353" />
-    <state x="548" y="323" key="com.intellij.ide.util.TipDialog" timestamp="1588597803272">
-      <screen x="0" y="0" width="1842" height="1080" />
+    <state x="131" y="0" key="SettingsEditor/0.0.1457.864@0.0.1457.864" timestamp="1589135019267" />
+    <state x="165" y="0" key="SettingsEditor/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588841560851" />
+    <state x="546" y="323" key="com.intellij.ide.util.TipDialog" timestamp="1591649516754">
+      <screen x="0" y="0" width="1837" height="1080" />
     </state>
-    <state x="548" y="323" key="com.intellij.ide.util.TipDialog/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588597803272" />
+    <state x="433" y="258" key="com.intellij.ide.util.TipDialog/0.0.1457.864@0.0.1457.864" timestamp="1589134982221" />
+    <state x="545" y="323" key="com.intellij.ide.util.TipDialog/1920.0.1466.864/0.0.1833.1080@0.0.1833.1080" timestamp="1589356560639" />
+    <state x="546" y="323" key="com.intellij.ide.util.TipDialog/1920.0.1470.864/0.0.1837.1080@0.0.1837.1080" timestamp="1591649516754" />
+    <state x="548" y="323" key="com.intellij.ide.util.TipDialog/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588839586101" />
+    <state x="182" y="74" key="new project wizard" timestamp="1589356583888">
+      <screen x="0" y="0" width="1833" height="1080" />
+    </state>
+    <state x="182" y="74" key="new project wizard/1920.0.1466.864/0.0.1833.1080@0.0.1833.1080" timestamp="1589356583888" />
+    <state x="183" y="74" key="new project wizard/1920.0.1474.864/0.0.1842.1080@0.0.1842.1080" timestamp="1588841584164" />
     <state x="500" y="45" width="840" height="1034" key="search.everywhere.popup" timestamp="1588472478749">
       <screen x="0" y="0" width="1842" height="1080" />
     </state>

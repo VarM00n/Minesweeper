@@ -4,79 +4,83 @@ public class Pics {
     /**
      * Corners
      */
-    public Icon TopRightCorner = new ImageIcon("src\\pics\\Border\\RightUpCorner.png");
-    public Icon TopLeftCorner = new ImageIcon("src\\pics\\Border\\LeftUpCorner.png");
-    public Icon DownRightCorner = new ImageIcon("src\\pics\\Border\\RightDownCorner.png");
-    public Icon DownLeftCorner = new ImageIcon("src\\pics\\Border\\LeftDownCorner.png");
+    public static Icon TopRightCorner = Pics.getIcon("Border/RightUpCorner.png");
+    public static Icon TopLeftCorner = Pics.getIcon("Border/LeftUpCorner.png");
+    public static Icon DownRightCorner = Pics.getIcon("Border/RightDownCorner.png");
+    public static Icon DownLeftCorner = Pics.getIcon("Border/LeftDownCorner.png");
     /**
      * Borders
      */
-    public Icon DownBorder = new ImageIcon("src\\pics\\Border\\DownBorder.png");
-    public Icon TopBorder = new ImageIcon("src\\pics\\Border\\UpBorder.png");
-    public Icon LeftBorder = new ImageIcon("src\\pics\\Border\\LeftBorder.png");
-    public Icon RightBorder = new ImageIcon("src\\pics\\Border\\RightBorder.png");
+    public static Icon DownBorder = Pics.getIcon("Border/DownBorder.png");
+    public static Icon TopBorder = Pics.getIcon("Border/UpBorder.png");
+    public static Icon LeftBorder = Pics.getIcon("Border/LeftBorder.png");
+    public static Icon RightBorder = Pics.getIcon("Border/RightBorder.png");
     /**
      * FIll
      */
-    public Icon FillWithBorder = new ImageIcon("src\\pics\\Border\\BlankWithBorder.png");
-    public Icon Logo = new ImageIcon("src\\pics\\Border\\Logo.png");
-    public Icon Blank = new ImageIcon("src\\pics\\Border\\Blank.png");
+    public static Icon FillWithBorder = Pics.getIcon("Border/BlankWithBorder.png");
+    public static Icon Logo = Pics.getIcon("Border/Logo.png");
+    public static Icon Blank = Pics.getIcon("Border/Blank.png");
     /**
      * Timer/Mines
      */
-    public Icon Zeros = new ImageIcon("src\\pics\\Timer\\TimerZero.png");
-    public Icon Ones = new ImageIcon("src\\pics\\Timer\\TimerOne.png");
-    public Icon Twos = new ImageIcon("src\\pics\\Timer\\TimerTwo.png");
-    public Icon Threes = new ImageIcon("src\\pics\\Timer\\TimerThree.png");
-    public Icon Fours = new ImageIcon("src\\pics\\Timer\\TimerFour.png");
-    public Icon Fives = new ImageIcon("src\\pics\\Timer\\TimerFive.png");
-    public Icon Sixs = new ImageIcon("src\\pics\\Timer\\TimerSix.png");
-    public Icon Sevens = new ImageIcon("src\\pics\\Timer\\TimerSeven.png");
-    public Icon Eights = new ImageIcon("src\\pics\\Timer\\TimerEight.png");
-    public Icon Nines = new ImageIcon("src\\pics\\Timer\\TimerNine.png");
-    public Icon minuss = new ImageIcon("src\\pics\\Timer\\Timer-.png");
+    public static Icon Zeros = Pics.getIcon("Timer/TimerZero.png");
+    public static Icon Ones = Pics.getIcon("Timer/TimerOne.png");
+    public static Icon Twos = Pics.getIcon("Timer/TimerTwo.png");
+    public static Icon Threes = Pics.getIcon("Timer/TimerThree.png");
+    public static Icon Fours = Pics.getIcon("Timer/TimerFour.png");
+    public static Icon Fives = Pics.getIcon("Timer/TimerFive.png");
+    public static Icon Sixs = Pics.getIcon("Timer/TimerSix.png");
+    public static Icon Sevens = Pics.getIcon("Timer/TimerSeven.png");
+    public static Icon Eights = Pics.getIcon("Timer/TimerEight.png");
+    public static Icon Nines = Pics.getIcon("Timer/TimerNine.png");
+//    public static Icon minuss = Pics.getIcon("Timer/Timer-.png");
     /**
      * Smile
      */
-    public Icon Smile1 = new ImageIcon("src\\pics\\Faces\\Smile\\S1.png");
-    public Icon Smile2 = new ImageIcon("src\\pics\\Faces\\Smile\\S2.png");
-    public Icon Smile3 = new ImageIcon("src\\pics\\Faces\\Smile\\S3.png");
-    public Icon Smile4 = new ImageIcon("src\\pics\\Faces\\Smile\\S4.png");
+    public static Icon Smile1 = Pics.getIcon("Faces/Smile/S1.png");
+    public static Icon Smile2 = Pics.getIcon("Faces/Smile/S2.png");
+    public static Icon Smile3 = Pics.getIcon("Faces/Smile/S3.png");
+    public static Icon Smile4 = Pics.getIcon("Faces/Smile/S4.png");
     /**
      * Dead
      */
-    public Icon Dead1 = new ImageIcon("src\\pics\\Faces\\Dead\\D1.png");
-    public Icon Dead2 = new ImageIcon("src\\pics\\Faces\\Dead\\D2.png");
-    public Icon Dead3 = new ImageIcon("src\\pics\\Faces\\Dead\\D3.png");
-    public Icon Dead4 = new ImageIcon("src\\pics\\Faces\\Dead\\D4.png");
+    public static Icon Dead1 = Pics.getIcon("Faces/Dead/D1.png");
+    public static Icon Dead2 = Pics.getIcon("Faces/Dead/D2.png");
+    public static Icon Dead3 = Pics.getIcon("Faces/Dead/D3.png");
+    public static Icon Dead4 = Pics.getIcon("Faces/Dead/D4.png");
     /**
      * Bro
      */
-    public Icon Bro1 = new ImageIcon("src\\pics\\Faces\\Bro\\B1.png");
-    public Icon Bro2 = new ImageIcon("src\\pics\\Faces\\Bro\\B2.png");
-    public Icon Bro3 = new ImageIcon("src\\pics\\Faces\\Bro\\B3.png");
-    public Icon Bro4 = new ImageIcon("src\\pics\\Faces\\Bro\\B4.png");
+    public static Icon Bro1 = Pics.getIcon("Faces/Bro/B1.png");
+    public static Icon Bro2 = Pics.getIcon("Faces/Bro/B2.png");
+    public static Icon Bro3 = Pics.getIcon("Faces/Bro/B3.png");
+    public static Icon Bro4 = Pics.getIcon("Faces/Bro/B4.png");
     /**
      * Bro
      */
-    public Icon Wow1 = new ImageIcon("src\\pics\\Faces\\WOW\\W1.png");
-    public Icon Wow2 = new ImageIcon("src\\pics\\Faces\\WOW\\W2.png");
-    public Icon Wow3 = new ImageIcon("src\\pics\\Faces\\WOW\\W3.png");
-    public Icon Wow4 = new ImageIcon("src\\pics\\Faces\\WOW\\W4.png");
+    public static Icon Wow1 = Pics.getIcon("Faces/WOW/W1.png");
+    public static Icon Wow2 = Pics.getIcon("Faces/WOW/W2.png");
+    public static Icon Wow3 = Pics.getIcon("Faces/WOW/W3.png");
+    public static Icon Wow4 = Pics.getIcon("Faces/WOW/W4.png");
     /**
      * Game
      */
-    public Icon Untouched = new ImageIcon("src\\pics\\Game\\BlankBlock.png");
-    public Icon Touched = new ImageIcon("src\\pics\\Game\\clickedBlock.png");
-    public Icon OneB = new ImageIcon("src\\pics\\Game\\One.png");
-    public Icon TwoB = new ImageIcon("src\\pics\\Game\\Two.png");
-    public Icon ThreeB = new ImageIcon("src\\pics\\Game\\Three.png");
-    public Icon FourB = new ImageIcon("src\\pics\\Game\\Four.png");
-    public Icon FiveB = new ImageIcon("src\\pics\\Game\\Five.png");
-    public Icon SixB = new ImageIcon("src\\pics\\Game\\Six.png");
-    public Icon SevenB = new ImageIcon("src\\pics\\Game\\Seven.png");
-    public Icon EightB = new ImageIcon("src\\pics\\Game\\Eight.png");
-    public Icon MineClicked = new ImageIcon("src\\pics\\Game\\bombClicked.png");
-    public Icon NotClicked = new ImageIcon("src\\pics\\Game\\BombNotClicked.png");
-    public Icon Flag = new ImageIcon("src\\pics\\Game\\flag.png");
+    public static Icon Untouched = Pics.getIcon("Game/BlankBlock.png");
+    public static Icon Touched = Pics.getIcon("Game/clickedBlock.png");
+    public static Icon OneB = Pics.getIcon("Game/One.png");
+    public static Icon TwoB = Pics.getIcon("Game/Two.png");
+    public static Icon ThreeB = Pics.getIcon("Game/Three.png");
+    public static Icon FourB = Pics.getIcon("Game/Four.png");
+    public static Icon FiveB = Pics.getIcon("Game/Five.png");
+    public static Icon SixB = Pics.getIcon("Game/Six.png");
+    public static Icon SevenB = Pics.getIcon("Game/Seven.png");
+    public static Icon EightB = Pics.getIcon("Game/Eight.png");
+    public static Icon MineClicked = Pics.getIcon("Game/bombClicked.png");
+    public static Icon NotClicked = Pics.getIcon("Game/BombNotClicked.png");
+    public static Icon Flag = Pics.getIcon("Game/flag.png");
+
+    private static ImageIcon getIcon(String path) {
+        return new ImageIcon(Pics.class.getResource("/pics/" + path));
+    }
 }

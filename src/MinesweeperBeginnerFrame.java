@@ -12,7 +12,6 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     /**
      * For usage
      */
-    Pics pics = new Pics();
     int ROWS;
     int COLS;
     int NUMBER_OF_MINES;
@@ -30,11 +29,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     /**
      * Faces
      */
-
-
     public MinesweeperBeginnerFrame(int lvl, int ROWs, int COLs, int MINEs) {
         super("Minesweeper");
-//        lvlChoose(lvl);
         GAME_LVL = lvl;
         ROWS = ROWs;
         COLS = COLs;
@@ -46,14 +42,13 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(ROWS, COLS));
         setSize(COLS * 25 + 16, ROWS * 25 + 39);
+        setLocationRelativeTo(null);
         enableInputMethods(true);
         this.setResizable(false);
         drawBoard();
         generateMines();
         countNeighbourMines();
         setVisible(true);
-        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-        this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
         countFlagsForMines();
         Timer timer = new Timer();
         timer.schedule(new TimerTask() {
@@ -126,69 +121,69 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
               Borders & Corners
              */
                 if(i == 0 && j == 0) {
-                    buttons[i][j] = new JButton(pics.TopRightCorner);
+                    buttons[i][j] = new JButton(Pics.TopRightCorner);
                     buttons[i][j].addActionListener(this);
                 }
                 else if(i == ROWS - 1 && j == 0) {
-                    buttons[i][j] = new JButton(pics.DownRightCorner);
+                    buttons[i][j] = new JButton(Pics.DownRightCorner);
                 }
                 else if(i == 0 && j == COLS - 1){
-                    buttons[i][j] = new JButton(pics.TopLeftCorner);
+                    buttons[i][j] = new JButton(Pics.TopLeftCorner);
                 }
                 else if(i == ROWS - 1 && j == COLS - 1){
-                    buttons[i][j] = new JButton(pics.DownLeftCorner);
+                    buttons[i][j] = new JButton(Pics.DownLeftCorner);
                 }
                 else if(i == 0) {
-                    buttons[i][j] = new JButton(pics.TopBorder);
+                    buttons[i][j] = new JButton(Pics.TopBorder);
                 }
                 else if(j == 0) {
-                    buttons[i][j] = new JButton(pics.LeftBorder);
+                    buttons[i][j] = new JButton(Pics.LeftBorder);
                 }
                 else if(j == COLS - 1){
-                    buttons[i][j] = new JButton(pics.RightBorder);
+                    buttons[i][j] = new JButton(Pics.RightBorder);
                 }
                 else if(i == ROWS - 1){
-                    buttons[i][j] = new JButton(pics.DownBorder);
+                    buttons[i][j] = new JButton(Pics.DownBorder);
                 }
              /*
               Mines & Time counter
              */
                 else if(i == 1 && (j == 1 || j == 2 || j == 3 || j == COLS - 4 || j == COLS - 3 || j == COLS - 2)){
-                    buttons[i][j] = new JButton(pics.Zeros);
+                    buttons[i][j] = new JButton(Pics.Zeros);
                 }
              /*
               Face
              */
                 else if((i == 1 && j == COLS/2 - 1)){
-                    buttons[i][j] = new JButton(pics.Smile1);
+                    buttons[i][j] = new JButton(Pics.Smile1);
                     buttons[i][j].addActionListener(this);
                 }
                 else if(i == 1 && j == COLS/2){
-                    buttons[i][j] = new JButton(pics.Smile2);
+                    buttons[i][j] = new JButton(Pics.Smile2);
                     buttons[i][j].addActionListener(this);
                 }
                 else if(i == 1) {
-                    buttons[i][j] = new JButton(pics.Blank);
+                    buttons[i][j] = new JButton(Pics.Blank);
                     buttons[i][j].addActionListener(this);
                 }else if(i == 2 && j == COLS/2 - 1){
-                    buttons[i][j] = new JButton(pics.Smile4);
+                    buttons[i][j] = new JButton(Pics.Smile4);
                     buttons[i][j].addActionListener(this);
                 }
                 else if(i == 2 && j == COLS/2 ){
-                    buttons[i][j] = new JButton(pics.Smile3);
+                    buttons[i][j] = new JButton(Pics.Smile3);
                     buttons[i][j].addActionListener(this);
                 }
              /*
               Upper fill
              */
                 else if((i == 2 && j == COLS - 2) ){
-                    buttons[i][j] = new JButton(pics.Logo);
+                    buttons[i][j] = new JButton(Pics.Logo);
                 }
                 else if(i == 2){
-                    buttons[i][j] = new JButton(pics.FillWithBorder);
+                    buttons[i][j] = new JButton(Pics.FillWithBorder);
                 }
                 else {
-                    buttons[i][j] = new JButton(pics.Untouched);
+                    buttons[i][j] = new JButton(Pics.Untouched);
                     buttons[i][j].addActionListener(this);
                     JButton temp = buttons[i][j];
                     buttons[i][j].addMouseListener(new MouseAdapter() {
@@ -196,11 +191,11 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                         public void mouseClicked(MouseEvent e) {
                             if(GAME_STATUS) {
                                 if (e.getButton() == MouseEvent.BUTTON3) {
-                                    if (temp.getIcon() == pics.Untouched) {
-                                        if (temp.getIcon() != pics.Flag)
-                                            temp.setIcon(pics.Flag);
-                                    } else if (temp.getIcon() == pics.Flag) {
-                                        temp.setIcon(pics.Untouched);
+                                    if (temp.getIcon() == Pics.Untouched) {
+                                        if (temp.getIcon() != Pics.Flag)
+                                            temp.setIcon(Pics.Flag);
+                                    } else if (temp.getIcon() == Pics.Flag) {
+                                        temp.setIcon(Pics.Untouched);
                                     }
                                 }
                                 countFlagsForMines();
@@ -209,13 +204,13 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
 
                         @Override
                         public void mousePressed(MouseEvent e) {
-                            paintFace(pics.Wow1, pics.Wow2, pics.Wow3, pics.Wow4);
+                            paintFace(Pics.Wow1, Pics.Wow2, Pics.Wow3, Pics.Wow4);
                         }
 
                         @Override
                         public void mouseReleased(MouseEvent e) {
                             if(GAME_STATUS) {
-                                paintFace(pics.Smile1, pics.Smile2, pics.Smile3, pics.Smile4);
+                                paintFace(Pics.Smile1, Pics.Smile2, Pics.Smile3, Pics.Smile4);
                             }
                         }
                     });
@@ -362,15 +357,13 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                 break;
             }
         }
-
-
     }
 
     public boolean checkIfGameWon(){
         for(int i = 3; i < ROWS - 1; i++) {
             for (int j = 1; j < COLS - 1; j++) {
                 if(mines[i-3][j-1] != -1){
-                    if(buttons[i][j].getIcon() == pics.Untouched){
+                    if(buttons[i][j].getIcon() == Pics.Untouched){
                         return false;
                     }
                 }
@@ -382,8 +375,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     public void addAllFlags(){
         for(int i = 3; i < ROWS - 1; i++) {
             for (int j = 1; j < COLS - 1; j++) {
-                if(mines[i-3][j-1] == -1 && buttons[i][j].getIcon() != pics.Flag){
-                    buttons[i][j].setIcon(pics.Flag);
+                if(mines[i-3][j-1] == -1 && buttons[i][j].getIcon() != Pics.Flag){
+                    buttons[i][j].setIcon(Pics.Flag);
                 }
             }
         }
@@ -393,7 +386,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         NUMBER_OF_FLAGS = 0;
         for(int i = 3; i <ROWS - 1; i++) {
             for (int j = 1; j < COLS - 1; j++) {
-                if(buttons[i][j].getIcon() == pics.Flag){
+                if(buttons[i][j].getIcon() == Pics.Flag){
                     NUMBER_OF_FLAGS++;
                 }
             }
@@ -418,29 +411,28 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     }
 
     public Icon checkNumber(int number){
-        Pics pics = new Pics();
         if(number == 0){
-            return pics.Zeros;
+            return Pics.Zeros;
         }if(number == 1){
-            return pics.Ones;
+            return Pics.Ones;
         }if(number == 2){
-            return pics.Twos;
+            return Pics.Twos;
         }if(number == 3){
-            return pics.Threes;
+            return Pics.Threes;
         }if(number == 4){
-            return pics.Fours;
+            return Pics.Fours;
         }if(number == 5){
-            return pics.Fives;
+            return Pics.Fives;
         }if(number == 6){
-            return pics.Sixs;
+            return Pics.Sixs;
         }if(number == 7){
-            return pics.Sevens;
+            return Pics.Sevens;
         }if(number == 8){
-            return pics.Eights;
+            return Pics.Eights;
         }if(number == 9){
-            return pics.Nines;
+            return Pics.Nines;
         }
-        return pics.Zeros;
+        return Pics.Zeros;
     }
 
     public void changeCounter(int hundreds, int tens, int ones){
@@ -461,7 +453,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         for(int i = 3; i < ROWS - 1; i++) {
             for (int j = 1; j < COLS - 1; j++) {
                 if(mines[i-3][j-1] == -1){
-                    buttons[i][j].setIcon(pics.NotClicked);
+                    buttons[i][j].setIcon(Pics.NotClicked);
                 }
             }
         }
@@ -503,7 +495,6 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-        Pics pics = new Pics();
         if(source == buttons[1][COLS/2 - 1] || source == buttons[1][COLS/2] || source == buttons[2][COLS/2 - 1] || source == buttons[2][COLS/2]){
             dispose();
             new MinesweeperBeginnerFrame(GAME_LVL, ROWS, COLS, MINESS);
@@ -514,13 +505,13 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         for(int i = 3; i < ROWS - 1; i++){
             for(int j = 1; j < COLS - 1; j++){
                 if(source == buttons[i][j]) {
-                    if (buttons[i][j].getIcon() != pics.Flag) {
+                    if (buttons[i][j].getIcon() != Pics.Flag) {
                         if (mines[i - 3][j - 1] == -1) {
                             GAME_STATUS = false;
                             showAllMines();
-                            buttons[i][j].setIcon(pics.MineClicked);
+                            buttons[i][j].setIcon(Pics.MineClicked);
                             disableAllButtons();
-                            paintFace(pics.Dead1, pics.Dead2, pics.Dead3, pics.Dead4);
+                            paintFace(Pics.Dead1, Pics.Dead2, Pics.Dead3, Pics.Dead4);
                         } else if (mines[i - 3][j - 1] == 0) {
                             Set<Point> set = new HashSet<>();
                             int[] var = new int[2];
@@ -529,47 +520,47 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                             finishAddToListNonRepeatable(set, var);
                             for (Point p : set) {
                                 if (mines[p.coordinates[0]][p.coordinates[1]] == 0) {
-                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(pics.Touched);
+                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(Pics.Touched);
                                 } else if (mines[p.coordinates[0]][p.coordinates[1]] == 1) {
-                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(pics.OneB);
+                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(Pics.OneB);
                                 } else if (mines[p.coordinates[0]][p.coordinates[1]] == 2) {
-                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(pics.TwoB);
+                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(Pics.TwoB);
                                 } else if (mines[p.coordinates[0]][p.coordinates[1]] == 3) {
-                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(pics.ThreeB);
+                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(Pics.ThreeB);
                                 } else if (mines[p.coordinates[0]][p.coordinates[1]] == 4) {
-                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(pics.FourB);
+                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(Pics.FourB);
                                 } else if (mines[p.coordinates[0]][p.coordinates[1]] == 5) {
-                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(pics.FiveB);
+                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(Pics.FiveB);
                                 } else if (mines[p.coordinates[0]][p.coordinates[1]] == 6) {
-                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(pics.SixB);
+                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(Pics.SixB);
                                 } else if (mines[p.coordinates[0]][p.coordinates[1]] == 7) {
-                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(pics.SevenB);
+                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(Pics.SevenB);
                                 } else if (mines[p.coordinates[0]][p.coordinates[1]] == 8) {
-                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(pics.EightB);
+                                    buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(Pics.EightB);
                                 }
                             }
                         } else if (mines[i - 3][j - 1] == 1) {
-                            buttons[i][j].setIcon(pics.OneB);
+                            buttons[i][j].setIcon(Pics.OneB);
                         } else if (mines[i - 3][j - 1] == 2) {
-                            buttons[i][j].setIcon(pics.TwoB);
+                            buttons[i][j].setIcon(Pics.TwoB);
                         } else if (mines[i - 3][j - 1] == 3) {
-                            buttons[i][j].setIcon(pics.ThreeB);
+                            buttons[i][j].setIcon(Pics.ThreeB);
                         } else if (mines[i - 3][j - 1] == 4) {
-                            buttons[i][j].setIcon(pics.FourB);
+                            buttons[i][j].setIcon(Pics.FourB);
                         } else if (mines[i - 3][j - 1] == 5) {
-                            buttons[i][j].setIcon(pics.FiveB);
+                            buttons[i][j].setIcon(Pics.FiveB);
                         } else if (mines[i - 3][j - 1] == 6) {
-                            buttons[i][j].setIcon(pics.SixB);
+                            buttons[i][j].setIcon(Pics.SixB);
                         } else if (mines[i - 3][j - 1] == 7) {
-                            buttons[i][j].setIcon(pics.SevenB);
+                            buttons[i][j].setIcon(Pics.SevenB);
                         } else if (mines[i - 3][j - 1] == 8) {
-                            buttons[i][j].setIcon(pics.EightB);
+                            buttons[i][j].setIcon(Pics.EightB);
                         }
                         countFlagsForMines();
                     }
                     if(checkIfGameWon()){
                         GAME_STATUS = false;
-                        paintFace(pics.Bro1, pics.Bro2, pics.Bro3, pics.Bro4);
+                        paintFace(Pics.Bro1, Pics.Bro2, Pics.Bro3, Pics.Bro4);
                         addAllFlags();
                         disableAllButtons();
                     }
