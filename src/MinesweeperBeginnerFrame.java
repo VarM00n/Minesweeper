@@ -10,7 +10,7 @@ import java.util.Timer;
 public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
 
     /**
-     * For usage
+     * Attributed used within game itself
      */
     int ROWS;
     int COLS;
@@ -25,10 +25,6 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     int GAME_LVL;
     int MINESS;
 
-
-    /**
-     * Faces
-     */
     public MinesweeperBeginnerFrame(int lvl, int ROWs, int COLs, int MINEs) {
         super("Minesweeper");
         GAME_LVL = lvl;
@@ -61,13 +57,13 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     }
 
     /**
-     * Function to count all nearby mines on board
+     * Count all nearby mines on board. Used for drawing at the beginning.
      */
-
     public void countNeighbourMines() {
+        // generating data for double dimensional table representing 8 neighboring positions
         for (int i = 0; i < ROWS - 4; i++) {
             for (int j = 0; j < COLS - 2; j++) {
-                // check if its a mine if is dont change
+                // check if its a mine if is, dont change
                 if (mines[i][j] != -1) {
                     int[][] temporaryTable = new int[8][2];
                     // first position
@@ -95,15 +91,17 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                     temporaryTable[7][1] = i;
                     temporaryTable[7][0] = j - 1;
                     int count = 0;
+                    //counting all nearby mines by going though all positions
                     for (int k = 0; k < 8; k++) {
+                        //if position is not in game boundaries
                         if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > COLS - 3 ||
                                 temporaryTable[k][1] > ROWS - 5)) {
-                            // if not check if mine is there
                             if (mines[temporaryTable[k][1]][temporaryTable[k][0]] == -1) {
                                 count++;
                             }
                         }
                     }
+                    //adds the amount of mines in specific place in table for further processes
                     mines[i][j] = count;
                 }
             }
@@ -111,15 +109,12 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
 }
 
     /**
-     * Function to draw GUI
+     * Draw graphical user interface by changing icon of every button
      */
-
     public void drawBoard(){
         for(int i = 0; i < ROWS; i++){
             for(int j = 0; j < COLS; j++){
-            /*
-              Borders & Corners
-             */
+                //Borders & Corners
                 if(i == 0 && j == 0) {
                     buttons[i][j] = new JButton(Pics.TopRightCorner);
                     buttons[i][j].addActionListener(this);
@@ -145,15 +140,11 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                 else if(i == ROWS - 1){
                     buttons[i][j] = new JButton(Pics.DownBorder);
                 }
-             /*
-              Mines & Time counter
-             */
+                //Mines & Time counter
                 else if(i == 1 && (j == 1 || j == 2 || j == 3 || j == COLS - 4 || j == COLS - 3 || j == COLS - 2)){
                     buttons[i][j] = new JButton(Pics.Zeros);
                 }
-             /*
-              Face
-             */
+                //Face
                 else if((i == 1 && j == COLS/2 - 1)){
                     buttons[i][j] = new JButton(Pics.Smile1);
                     buttons[i][j].addActionListener(this);
@@ -173,9 +164,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                     buttons[i][j] = new JButton(Pics.Smile3);
                     buttons[i][j].addActionListener(this);
                 }
-             /*
-              Upper fill
-             */
+                //Upper fill
                 else if((i == 2 && j == COLS - 2) ){
                     buttons[i][j] = new JButton(Pics.Logo);
                 }
@@ -187,6 +176,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                     buttons[i][j].addActionListener(this);
                     JButton temp = buttons[i][j];
                     buttons[i][j].addMouseListener(new MouseAdapter() {
+                        //part of code used for setting flag icon if clicked with right mouse button
                         @Override
                         public void mouseClicked(MouseEvent e) {
                             if(GAME_STATUS) {
@@ -201,12 +191,12 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                                 countFlagsForMines();
                             }
                         }
-
+                        //if mouse is pressed change face to Wow
                         @Override
                         public void mousePressed(MouseEvent e) {
                             paintFace(Pics.Wow1, Pics.Wow2, Pics.Wow3, Pics.Wow4);
                         }
-
+                        //if mouse is released and game is in progress change face back to smile
                         @Override
                         public void mouseReleased(MouseEvent e) {
                             if(GAME_STATUS) {
@@ -222,24 +212,28 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     }
 
     /**
-     * Function to generate Mines in 8x8 field and save to mines
+     * Generate mines in given field (row/cols/mines)
      */
-
     public void generateMines(){
         int [] temporaryTable = new int[NUMBER_OF_MINES];
         int TemporaryNumberOfMines = NUMBER_OF_MINES;
+        //setting all values in temporary table to ones unable to being generated later in method
         for(int i = 0; i < NUMBER_OF_MINES; i++){
             temporaryTable[i] = (ROWS - 4)*(COLS-2) + 1;
         }
+        //setting in place all mines
         while(NUMBER_OF_MINES > 0){
+            //generating random number representing a place on board
             int numberToCheck = getRandomNumberInRange((ROWS - 4)*(COLS-2));
             int check = 0;
+            //checking if generated number is already in use
             for(int i = 0; i < TemporaryNumberOfMines; i++){
                 if (numberToCheck == temporaryTable[i]) {
                     check = 1;
                     break;
                 }
             }
+            //if number is not in use change temporary table and put -1(mine) in correct place
             if(check == 0){
                 temporaryTable[NUMBER_OF_MINES-1] = numberToCheck;
                 addToMineTable(numberToCheck);
@@ -249,10 +243,10 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     }
 
     /**
+     * complementary method for generateMines(). Calculates a place in mine table
      *
-     * @param number to put into mineTable
+     * @param number variable specifying place of mine
      */
-
     public void addToMineTable(int number){
         int row = 0;
         while(number > COLS - 2){
@@ -264,6 +258,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     }
 
     /**
+     * Generating random number in range
      *
      * @param max - maximal value of integer
      * @return random integer
@@ -496,8 +491,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if(source == buttons[1][COLS/2 - 1] || source == buttons[1][COLS/2] || source == buttons[2][COLS/2 - 1] || source == buttons[2][COLS/2]){
-            dispose();
             new MinesweeperBeginnerFrame(GAME_LVL, ROWS, COLS, MINESS);
+            dispose();
         }
         if(source == buttons[0][0]){
             showAllMines();

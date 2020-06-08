@@ -38,7 +38,9 @@ public class Menu extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-
+    /**
+     * Method to place buttons in correct place and add graphics
+     */
     public void setButtons(){
         Beginner.addActionListener(this);
         Beginner.setBorder(new EmptyBorder(0, 0, 0, 0));
@@ -177,7 +179,7 @@ public class Menu extends JFrame implements ActionListener {
                 Ok.setIcon(Pics.OkB);
             }
         });
-        
+
         Rows.setBounds(370, 257, 40, 23);
         Rows.setBackground(Color.LIGHT_GRAY);
         Cols.setBounds(370, 288, 40, 23);
@@ -187,6 +189,11 @@ public class Menu extends JFrame implements ActionListener {
         Rows.setText("");Cols.setText("");Mines.setText("");
     }
 
+    /**
+     * Method for painting background with use of given picture
+     *
+     * @param path file from which picture is taken
+     */
     public void paintBackground(String path){
         try {
             this.setContentPane(new JLabel(new ImageIcon(ImageIO.read(new File(path)))));
@@ -195,21 +202,41 @@ public class Menu extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Check if a given amount of rows, columns and mines id correct in order to keep
+     * game in visible space
+     *
+     * @param rows      amount of rows in game
+     * @param cols      amount of columns in game
+     * @param mines     amount of mines in game
+     * @return          true if valid and false if not
+     */
     public boolean checkIfValid(String rows, String cols, String mines){
         if(rows.equals("") || cols.equals("") || mines.equals("")){
             return false;
         }
         return Integer.parseInt(Rows.getText()) >= 8 && Integer.parseInt(Cols.getText()) >= 8 &&
                 Integer.parseInt(Rows.getText()) <= 40 && Integer.parseInt(Rows.getText()) <= 60;
-
     }
 
+
+    /**
+     * Handling buttons clicks:
+     *  - Beginner  - new beginner game
+     *  - Medium    - new medium game
+     *  - Hard      - new hard game
+     *  - Custom    - adds jPanel for input (rows/columns/mines)
+     *  - Cancel    - delete jPanel for input
+     *  - Ok        - Creates a new game with given parameters if valid or clears if non valid
+     *
+     * @param e         parameter used for checking which button was clicked
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if(source == Beginner){
-            dispose();
             new MinesweeperBeginnerFrame(1, 12, 10, 10);
+            dispose();
         } else if(source == Medium){
             dispose();
             new MinesweeperBeginnerFrame(2, 20, 18, 40);
