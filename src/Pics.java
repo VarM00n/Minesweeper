@@ -80,6 +80,26 @@ public class Pics {
     public static Icon NotClicked = Pics.getIcon("Game/BombNotClicked.png");
     public static Icon Flag = Pics.getIcon("Game/flag.png");
 
+    /**
+     * Menu
+     */
+
+    private static Icon BeginnerB = Pics.getIcon("Menu\\LvlHardness\\Beginner.png");
+//    private static Icon BeginnerClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\BeginnerClicked.png");
+    private static Icon MediumB = Pics.getIcon("Menu\\LvlHardness\\Medium.png");
+//    private static Icon MediumClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\MediumClicked.png");
+//    private static Icon HardB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Hard.png");
+//    private static Icon HardClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\HardClicked.png");
+//    private static Icon CustomB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Custom.png");
+//    private static Icon CustomClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\CustomClicked.png");
+//    private static Icon LogoB = new ImageIcon("src\\pics\\Menu\\LogoForMenu.png");
+//    private static Icon CancelB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Cancel.png");
+//    private static Icon CancelClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\CancelClicked.png");
+//    private static Icon OkB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Ok.png");
+//    private static Icon OkClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\OkClicked.png");
+
+
+
     private static ImageIcon getIcon(String path) {
         return new ImageIcon(Pics.class.getResource("/pics/" + path));
     }

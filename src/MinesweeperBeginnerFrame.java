@@ -567,6 +567,5 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                 }
             }
         }
-
     }
 }
