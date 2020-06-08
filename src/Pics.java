@@ -2,6 +2,24 @@ import javax.swing.*;
 
 public class Pics {
     /**
+     * Menu
+     */
+
+    public static Icon BeginnerB = Pics.getIcon("Menu\\LvlHardness\\Beginner.png");
+    public static Icon BeginnerClickedB = Pics.getIcon("Menu\\LvlHardness\\BeginnerClicked.png");
+    public static Icon MediumB = Pics.getIcon("Menu\\LvlHardness\\Medium.png");
+    public static Icon MediumClickedB = Pics.getIcon("Menu\\LvlHardness\\MediumClicked.png");
+    public static Icon HardB = Pics.getIcon("Menu\\LvlHardness\\Hard.png");
+    public static Icon HardClickedB = Pics.getIcon("Menu\\LvlHardness\\HardClicked.png");
+    public static Icon CustomB = Pics.getIcon("Menu\\LvlHardness\\Custom.png");
+    public static Icon CustomClickedB = Pics.getIcon("Menu\\LvlHardness\\CustomClicked.png");
+    public static Icon LogoB = Pics.getIcon("Menu\\LogoForMenu.png");
+    public static Icon CancelB = Pics.getIcon("Menu\\LvlHardness\\Cancel.png");
+    public static Icon CancelClickedB = Pics.getIcon("Menu\\LvlHardness\\CancelClicked.png");
+    public static Icon OkB = Pics.getIcon("Menu\\LvlHardness\\Ok.png");
+    public static Icon OkClickedB = Pics.getIcon("Menu\\LvlHardness\\OkClicked.png");
+
+    /**
      * Corners
      */
     public static Icon TopRightCorner = Pics.getIcon("Border/RightUpCorner.png");
@@ -34,7 +52,6 @@ public class Pics {
     public static Icon Sevens = Pics.getIcon("Timer/TimerSeven.png");
     public static Icon Eights = Pics.getIcon("Timer/TimerEight.png");
     public static Icon Nines = Pics.getIcon("Timer/TimerNine.png");
-//    public static Icon minuss = Pics.getIcon("Timer/Timer-.png");
     /**
      * Smile
      */
@@ -79,25 +96,6 @@ public class Pics {
     public static Icon MineClicked = Pics.getIcon("Game/bombClicked.png");
     public static Icon NotClicked = Pics.getIcon("Game/BombNotClicked.png");
     public static Icon Flag = Pics.getIcon("Game/flag.png");
-
-    /**
-     * Menu
-     */
-
-    private static Icon BeginnerB = Pics.getIcon("Menu\\LvlHardness\\Beginner.png");
-//    private static Icon BeginnerClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\BeginnerClicked.png");
-    private static Icon MediumB = Pics.getIcon("Menu\\LvlHardness\\Medium.png");
-//    private static Icon MediumClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\MediumClicked.png");
-//    private static Icon HardB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Hard.png");
-//    private static Icon HardClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\HardClicked.png");
-//    private static Icon CustomB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Custom.png");
-//    private static Icon CustomClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\CustomClicked.png");
-//    private static Icon LogoB = new ImageIcon("src\\pics\\Menu\\LogoForMenu.png");
-//    private static Icon CancelB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Cancel.png");
-//    private static Icon CancelClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\CancelClicked.png");
-//    private static Icon OkB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Ok.png");
-//    private static Icon OkClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\OkClicked.png");
-
 
 
     private static ImageIcon getIcon(String path) {

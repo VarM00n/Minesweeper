@@ -24,20 +24,6 @@ public class Menu extends JFrame implements ActionListener {
     private JButton Cancel = new JButton();
     private JButton Ok = new JButton();
 
-    private Icon BeginnerB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Beginner.png");
-    private Icon BeginnerClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\BeginnerClicked.png");
-    private Icon MediumB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Medium.png");
-    private Icon MediumClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\MediumClicked.png");
-    private Icon HardB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Hard.png");
-    private Icon HardClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\HardClicked.png");
-    private Icon CustomB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Custom.png");
-    private Icon CustomClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\CustomClicked.png");
-    private Icon LogoB = new ImageIcon("src\\pics\\Menu\\LogoForMenu.png");
-    private Icon CancelB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Cancel.png");
-    private Icon CancelClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\CancelClicked.png");
-    private Icon OkB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\Ok.png");
-    private Icon OkClickedB = new ImageIcon("src\\pics\\Menu\\LvlHardness\\OkClicked.png");
-
     public Menu(){
         super("Minesweeper");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -46,7 +32,7 @@ public class Menu extends JFrame implements ActionListener {
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         this.setLocation(dim.width/2-this.getSize().width/2, dim.height/2-this.getSize().height/2);
         enableInputMethods(true);
-        paintBackground("src\\pics\\MenuPic.png");
+        paintBackground("res\\pics\\MenuPic.png");
         setButtons();
         this.setResizable(false);
         setVisible(true);
@@ -58,24 +44,25 @@ public class Menu extends JFrame implements ActionListener {
         Beginner.setBorder(new EmptyBorder(0, 0, 0, 0));
         Beginner.setSize(200, 50);
         Beginner.setLocation(40,100);
-        Beginner.setIcon(BeginnerB);
-        Beginner.setDisabledIcon(BeginnerB);
+        Beginner.setIcon(Pics.BeginnerB);
+        Beginner.setDisabledIcon(Pics.BeginnerB);
         Beginner.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
                 if(Beginner.isEnabled()) {
                     if (e.getButton() == MouseEvent.BUTTON1) {
-                        Beginner.setIcon(BeginnerClickedB);
+                        Beginner.setIcon(Pics.BeginnerClickedB);
                     }
                 }
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                Beginner.setIcon(BeginnerB);
+                Beginner.setIcon(Pics.BeginnerB);
             }
         });
         add(Beginner);
+
         Medium.addActionListener(this);
         Medium.setBorder(new EmptyBorder(0, 0, 0, 0));
         Medium.setSize(177, 50);
@@ -85,106 +72,112 @@ public class Menu extends JFrame implements ActionListener {
             public void mousePressed(MouseEvent e) {
                 if(Medium.isEnabled()) {
                     if (e.getButton() == MouseEvent.BUTTON1) {
-                        Medium.setIcon(MediumClickedB);
+                        Medium.setIcon(Pics.MediumClickedB);
                     }
                 }
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                Medium.setIcon(MediumB);
+                Medium.setIcon(Pics.MediumB);
             }
         });
-        Medium.setIcon(MediumB);
-        Medium.setDisabledIcon(MediumB);
+        Medium.setIcon(Pics.MediumB);
+        Medium.setDisabledIcon(Pics.MediumB);
         add(Medium);
+
         Hard.addActionListener(this);
         Hard.setBorder(new EmptyBorder(0, 0, 0, 0));
         Hard.setSize(124, 50);
         Hard.setLocation(40,250);
-        Hard.setIcon(HardB);
-        Hard.setDisabledIcon(HardB);
         Hard.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
                 if(Hard.isEnabled()) {
                     if (e.getButton() == MouseEvent.BUTTON1) {
-                        Hard.setIcon(HardClickedB);
+                        Hard.setIcon(Pics.HardClickedB);
                     }
                 }
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                Hard.setIcon(HardB);
+                Hard.setIcon(Pics.HardB);
             }
         });
+        Hard.setIcon(Pics.HardB);
+        Hard.setDisabledIcon(Pics.HardB);
         add(Hard);
+
         Logo.addActionListener(this);
         Logo.setBorder(new EmptyBorder(0, 0, 0, 0));
         Logo.setSize(50, 50);
         Logo.setLocation(420,420);
-        Logo.setIcon(LogoB);
-        Logo.setDisabledIcon(LogoB);
+        Logo.setIcon(Pics.LogoB);
+        Logo.setDisabledIcon(Pics.LogoB);
         add(Logo);
+
         Custom.addActionListener(this);
         Custom.setBorder(new EmptyBorder(0, 0, 0, 0));
         Custom.setSize(174, 50);
         Custom.setLocation(40,325);
-        Custom.setIcon(CustomB);
-        Custom.setDisabledIcon(CustomB);
+        Custom.setIcon(Pics.CustomB);
+        Custom.setDisabledIcon(Pics.CustomB);
         Custom.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
                 if(Custom.isEnabled()) {
                     if (e.getButton() == MouseEvent.BUTTON1) {
-                        Custom.setIcon(CustomClickedB);
+                        Custom.setIcon(Pics.CustomClickedB);
                     }
                 }
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                Custom.setIcon(CustomB);
+                Custom.setIcon(Pics.CustomB);
             }
         });
         add(Custom);
+
         Cancel.addActionListener(this);
         Cancel.setBorder(new EmptyBorder(0, 0, 0, 0));
         Cancel.setSize(104, 37);
         Cancel.setLocation(268,345);
-        Cancel.setIcon(CancelB);
+        Cancel.setIcon(Pics.CancelB);
         Cancel.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
                 if(e.getButton() == MouseEvent.BUTTON1){
-                    Cancel.setIcon(CancelClickedB);
+                    Cancel.setIcon(Pics.CancelClickedB);
                 }
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                Cancel.setIcon(CancelB);
+                Cancel.setIcon(Pics.CancelB);
             }
         });
+
         Ok.addActionListener(this);
         Ok.setBorder(new EmptyBorder(0, 0, 0, 0));
         Ok.setSize(50, 37);
         Ok.setLocation(383,345);
-        Ok.setIcon(OkB);
+        Ok.setIcon(Pics.OkB);
         Ok.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
                 if(e.getButton() == MouseEvent.BUTTON1){
-                    Ok.setIcon(OkClickedB);
+                    Ok.setIcon(Pics.OkClickedB);
                 }
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                Ok.setIcon(OkB);
+                Ok.setIcon(Pics.OkB);
             }
         });
+        
         Rows.setBounds(370, 257, 40, 23);
         Rows.setBackground(Color.LIGHT_GRAY);
         Cols.setBounds(370, 288, 40, 23);
@@ -224,13 +217,13 @@ public class Menu extends JFrame implements ActionListener {
             dispose();
             new MinesweeperBeginnerFrame(3, 20, 32, 99);
         } else if(source == Custom){
-            paintBackground("src\\pics\\MenuPicAfterCustom.png");
+            paintBackground("res\\pics\\MenuPicAfterCustom.png");
             setVisible(true);
             add(Beginner);add(Medium);add(Hard);add(Custom);add(Logo);add(Cancel);add(Ok);add(Rows);add(Cols);add(Mines);
             Beginner.setEnabled(false);Medium.setEnabled(false);Hard.setEnabled(false);Custom.setEnabled(false);
 
         } else if(source == Cancel){
-            paintBackground("src\\pics\\MenuPic.png");
+            paintBackground("res\\pics\\MenuPic.png");
             setVisible(true);
             add(Beginner);add(Medium);add(Hard);add(Custom);add(Logo);
             Beginner.setEnabled(true);Medium.setEnabled(true);Hard.setEnabled(true);Custom.setEnabled(true);
