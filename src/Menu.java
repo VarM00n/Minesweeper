@@ -49,6 +49,7 @@ public class Menu extends JFrame implements ActionListener {
         Beginner.setIcon(Pics.BeginnerB);
         Beginner.setDisabledIcon(Pics.BeginnerB);
         Beginner.addMouseListener(new MouseAdapter() {
+            // if a button was clicked change icon same with released
             @Override
             public void mousePressed(MouseEvent e) {
                 if(Beginner.isEnabled()) {
@@ -57,7 +58,6 @@ public class Menu extends JFrame implements ActionListener {
                     }
                 }
             }
-
             @Override
             public void mouseReleased(MouseEvent e) {
                 Beginner.setIcon(Pics.BeginnerB);

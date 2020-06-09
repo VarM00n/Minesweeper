@@ -47,6 +47,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         setVisible(true);
         countFlagsForMines();
         Timer timer = new Timer();
+        // timer to add seconds and change timer
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -278,8 +279,8 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
      * @param set of Boxes to check
      * @param point as a place to start
      */
-
     private void addToListNonRepeatable(Set<Point> set, int[] point){
+        // double dimensional table to save all neighboring positions
         int[][] temporaryTable = new int[8][2];
         // first position
         temporaryTable[0][0] = point[0] - 1;
@@ -306,13 +307,16 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         temporaryTable[7][0] = point[0];
         temporaryTable[7][1] = point[1] - 1;
         for (int k = 0; k < 8; k++) {
+            // checking if a position is in bounds
             if (!(temporaryTable[k][0] < 0 || temporaryTable[k][1] < 0 || temporaryTable[k][0] > ROWS - 5 ||
                     temporaryTable[k][1] > COLS - 3)) {
+                // new point in order to not work on origin coordinates
                 Point pNext = new Point();
                 pNext.coordinates = temporaryTable[k];
                 pNext.touched = false;
                 int counter = 0;
                 for (Point p : set) {
+                    //if position pNext is not within set - add
                     if (Arrays.equals(pNext.coordinates, p.coordinates)) {
                         counter++;
                     }
@@ -325,22 +329,25 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
     }
 
     /**
-     * Function to finish adding do set
-     * @param set of Boxes to check
-     * @param point as a place to start
+     * Used for revealing all positions with empty filling or numbers. Leaves positions with mines unrevealed.
+     * @param set   positions to check
+     * @param point place to start
      */
-
     private void finishAddToListNonRepeatable(Set<Point> set, int[] point){
         Point pStart = new Point();
         pStart.coordinates = point;
         set.add(pStart);
         addToListNonRepeatable(set, point);
         pStart.touched = true;
+        //repeats as long as counter != 0
         while(true){
             int count = 0;
+            // every position in set has two attributes. If a given position has been processed attribute 'touched'
+            // change so it won't be processed again
             for(Point p: set){
                 if(!p.touched){
                     p.touched = true;
+                    // at this moment a set has only positions with no mine or number in it
                     if (mines[p.coordinates[0]][p.coordinates[1]] == 0) {
                         addToListNonRepeatable(set, p.coordinates);
                         count++;
@@ -354,6 +361,12 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Check if game won. It goes through every position and check if icon is different than untouched which means
+     * it hasn't been clicked.
+     *
+     * @return true if game won, false if game yet not won
+     */
     public boolean checkIfGameWon(){
         for(int i = 3; i < ROWS - 1; i++) {
             for (int j = 1; j < COLS - 1; j++) {
@@ -367,6 +380,10 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         return true;
     }
 
+    /**
+     * In Minesweeper there is no condition of marking all flags, so if game is won and some flags are not marked
+     * this function do it.
+     */
     public void addAllFlags(){
         for(int i = 3; i < ROWS - 1; i++) {
             for (int j = 1; j < COLS - 1; j++) {
@@ -377,8 +394,12 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * Change counter based on a difference between number of mines and flags on board
+     */
     public void countFlagsForMines(){
         NUMBER_OF_FLAGS = 0;
+        // counting flags
         for(int i = 3; i <ROWS - 1; i++) {
             for (int j = 1; j < COLS - 1; j++) {
                 if(buttons[i][j].getIcon() == Pics.Flag){
@@ -391,6 +412,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         int hundreds = 0;
         int tens = 0;
         int ones = forCounter;
+        // change number into hundreds, tens and ones
         if(forCounter > 100){
             hundreds = forCounter/100;
             int rest = NUMBER_FOR_COUNTER - hundreds* 100;
@@ -402,9 +424,16 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
             tens = forCounter/10;
             ones = NUMBER_FOR_COUNTER - tens*10;
         }
+        //change counter based on number given above
         changeCounter(hundreds, tens, ones);
     }
 
+    /**
+     * converts number into icon
+     *
+     * @param number    number to be checked and converted
+     * @return          returns an icon based on number
+     */
     public Icon checkNumber(int number){
         if(number == 0){
             return Pics.Zeros;
@@ -430,6 +459,12 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         return Pics.Zeros;
     }
 
+    /**
+     * change icon of buttons responsible for counter
+     * @param hundreds  number of hundreds
+     * @param tens      number of tens
+     * @param ones      number of ones
+     */
     public void changeCounter(int hundreds, int tens, int ones){
         //i == 1 && (j == 1 || j == 2 || j == 3)
         buttons[1][1].setIcon(checkNumber(hundreds));
@@ -437,6 +472,13 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         buttons[1][3].setIcon(checkNumber(ones));
     }
 
+    /**
+     * Painting face with a correct icons. Face is divided into 4 different parts.
+     * @param F1        icon for face
+     * @param F2        icon for face
+     * @param F3        icon for face
+     * @param F4        icon for face
+     */
     public void paintFace(Icon F1, Icon F2,Icon F3,Icon F4){
         buttons[1][COLS/2 - 1].setIcon(F1);
         buttons[1][COLS/2].setIcon(F2);
@@ -444,6 +486,9 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         buttons[2][COLS/2].setIcon(F3);
     }
 
+    /**
+     * cheating method that shows all the mines
+     */
     public void showAllMines(){
         for(int i = 3; i < ROWS - 1; i++) {
             for (int j = 1; j < COLS - 1; j++) {
@@ -454,6 +499,9 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * disabling all buttons so none can be clicked or change
+     */
     public void disableAllButtons(){
         for(int i = 3; i < ROWS - 1; i++){
             for(int j = 1; j < COLS - 1; j++) {
@@ -463,6 +511,9 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * method to change timer based on parameter that change every second
+     */
     public void setTimer(){
         if(GAME_STATUS) {
             int forCounter = SECONDS_COUNTER;
@@ -487,27 +538,37 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         }
     }
 
+    /**
+     * handling all clicks
+     * @param e
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
+        // if face is clicked restart game
         if(source == buttons[1][COLS/2 - 1] || source == buttons[1][COLS/2] || source == buttons[2][COLS/2 - 1] || source == buttons[2][COLS/2]){
             new MinesweeperBeginnerFrame(GAME_LVL, ROWS, COLS, MINESS);
             dispose();
         }
+        // cheat button to show all mines
         if(source == buttons[0][0]){
             showAllMines();
         }
+        // handling all buttons within game
         for(int i = 3; i < ROWS - 1; i++){
             for(int j = 1; j < COLS - 1; j++){
                 if(source == buttons[i][j]) {
                     if (buttons[i][j].getIcon() != Pics.Flag) {
+                        // if mine has been clicked game lost, show all mines, disable all buttons, change face to dead
                         if (mines[i - 3][j - 1] == -1) {
                             GAME_STATUS = false;
                             showAllMines();
                             buttons[i][j].setIcon(Pics.MineClicked);
                             disableAllButtons();
                             paintFace(Pics.Dead1, Pics.Dead2, Pics.Dead3, Pics.Dead4);
-                        } else if (mines[i - 3][j - 1] == 0) {
+                        }
+                        // if empty spot has been clicked reveals all empty spot and numbers that neighbors
+                        else if (mines[i - 3][j - 1] == 0) {
                             Set<Point> set = new HashSet<>();
                             int[] var = new int[2];
                             var[0] = i - 3;
@@ -534,7 +595,9 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                                     buttons[p.coordinates[0] + 3][p.coordinates[1] + 1].setIcon(Pics.EightB);
                                 }
                             }
-                        } else if (mines[i - 3][j - 1] == 1) {
+                        }
+                        // if a spot with number has been clicked reveals that number
+                        else if (mines[i - 3][j - 1] == 1) {
                             buttons[i][j].setIcon(Pics.OneB);
                         } else if (mines[i - 3][j - 1] == 2) {
                             buttons[i][j].setIcon(Pics.TwoB);
@@ -553,6 +616,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
                         }
                         countFlagsForMines();
                     }
+                    // handling game lost or won
                     if(checkIfGameWon()){
                         GAME_STATUS = false;
                         paintFace(Pics.Bro1, Pics.Bro2, Pics.Bro3, Pics.Bro4);
