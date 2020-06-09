@@ -9,6 +9,9 @@ import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Responsible for all menu features and look
+ */
 public class Menu extends JFrame implements ActionListener {
 
     int ROWS = 20;

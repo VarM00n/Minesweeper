@@ -7,6 +7,9 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.Timer;
 
+/**
+ * Responsible for all game features
+ */
 public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
 
     /**
@@ -339,7 +342,7 @@ public class MinesweeperBeginnerFrame extends JFrame implements ActionListener {
         set.add(pStart);
         addToListNonRepeatable(set, point);
         pStart.touched = true;
-        //repeats as long as counter != 0
+        // repeats as long as counter != 0
         while(true){
             int count = 0;
             // every position in set has two attributes. If a given position has been processed attribute 'touched'
